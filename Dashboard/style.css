@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+}
+.container {
+    width: 100%;
+    position: relative;
+}
+.container header {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+}
+header nav {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav .logo img {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    border-radius: 50%;
+}
+nav .menus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    /* width: 60%; */
+}
+nav .menus a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    color: black;
+}
+nav .auth {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav .auth button {
+    position: relative;
+    padding: 12px 26px;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+nav .auth button#login {
+    color: rgb(0, 128, 255);
+    background: transparent;
+    border: none;
+    outline: none;    
+}
+nav .auth button#sign {
+    background: rgb(0,128,255);
+    outline: none;
+    border: none;
+}
+nav .auth button#sign a {
+    color: white;
+}
+nav .auth button#login a {
+    color: rgb(0, 128, 255);
+}
+nav select {
+    position: relative;
+    padding: 4px 18px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+aside {
+    position: absolute;
+    width: 100%;
+    height: 380px;
+    top: -380px;
+}
+aside .navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+aside .navigation a {
+    width: 40%;
+    padding: 8px 13px;
+    font-size: 20px;
+    color: rgb(0, 128, 255);
+    border-bottom: 1.3px solid rgb(0, 128, 255);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+main {
+    position: relative;
+    width: 100%;
+}
+main section {
+    margin-top: 25px;
+}
+main section {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 10px 0px 10px;
+}
+section .col {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+section .col:first-child {
+    padding-left: 100px;
+}
+.col img {
+    width: 100%;
+    height: 70%;
+    padding-right: 50px;
+    position: relative;
+}
+section .col h1 {
+    font-size: 36px;
+    padding-right: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+section .col h2 {
+    /* padding: 25px 5px 15px 15px; */
+    font-size: 36px;
+    padding-right: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+section .col p {
+    /* padding: 25px 5px 15px 125px; */
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+section .col .btns {
+    display: flex;
+    width: 100%;
+    /* align-items: center;
+    justify-content: center; */
+}
+section .col .btns button {
+    position: relative;
+    padding: 12px 26px;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+section .col .btns button#biznes {
+    background: transparent;
+    border: 2px outset white;
+    outline: none;    
+}
+section .col .btns button#biznes a {
+    color: rgb(0, 128, 255);
+}
+section .col .btns button#investor a {
+    color: white;
+}
+section .col .btns button#investor {
+    color: white;
+    background: rgb(0,128,255);
+    outline: none;
+    border: 2px outset rgb(0, 128, 255);
+}
+section .col .carusel {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 300px;
+    height: 300px;
+}
+.carusel span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
+    transform-origin: 150px 150px;
+    font-size: 20px;
+    color: azure;
+    background: rgb(0, 128, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: carusel 5s linear infinite;
+    animation-delay: calc(0.5s * var(--i));
+}
+@keyframes carusel {
+    0% {
+        transform: scale(0) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1.2) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
+    }
+    100% {
+        transform: scale(1.2) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
+        opacity: 0;
+    }
+}
+.section {
+    position: relative;
+    padding: 10px 50px;
+    margin: 40px 0;
+}
+.section h2 {
+    font-size: 32px;
+    color: rgb(0, 128, 255);
+    padding: 15px 0 25px 15px;
+    border-bottom: 1.2px solid rgb(0, 128, 255);
+}
+.section .row {
+    padding: 25px 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.2px solid rgb(0, 128, 255);
+}
+.section .row img {
+    width: 180px;
+    height: 150px;
+}
+section #line {
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+}
+#line span {
+    background: rgb(172, 213, 255);
+    color: rgb(0, 128, 255);
+    padding: 5px 25px 5px 10px;
+    position: relative;
+    z-index: 645;
+    box-shadow: 0 0 10px 2px rgb(172, 213, 255);
+}
+.sect {
+    width: 100%;
+    position: relative;
+    margin: 25px 0;
+}
+.sect .row {
+    position: relative;
+    padding: 20px 10px 20px 110px;
+    width: 100%;
+    min-width: 1000px;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+}
+.sect .row .card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 10px;
+    background: rgb(0, 128, 255);
+    border-radius: 25% 3% / 45% 3%;
+}
+.card .prof {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.card .prof .mijoz {
+    display: flex;
+    flex-direction: column;
+}
+.prof img {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border-radius: 50%;
+}
+.mijoz #subject {
+    font-size: 13px;
+    font-weight: 400;
+}
+.mijoz #name {
+    font-size: 14px;
+    font-weight: 600;
+}
+.sect .box {
+    position: relative;
+}
+.box .count {
+    position: relative;
+    padding: 25px 30px;
+    border: 1px solid rgb(0, 128, 255);
+    margin: 15px 0;
+    background: rgb(177, 216, 255);
+    border-radius: 10px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 700;
+    color: rgb(0, 128, 255);
+}
+.box b {
+    margin: 8px 0;
+    font-size: 18px;
+}
+.box p {
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.box a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 128, 255);
+}

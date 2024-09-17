@@ -1,0 +1,111 @@
+1. {
+    <div class="title">
+                        <h2>Registratsiya</h2>
+                        <p>Ro'yxatdan o'tish uchun quyidagi formani to'ldiring</p>
+                     </div>
+                     <div class="inputs">
+                        <p>
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="checking" pattern="[a-z, A-Z]{2-15}" minlength="3" placeholder="Ism" required>
+                        </p>
+                        <p>
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="checking" pattern="[a-z, A-Z]{2-15}" minlength="3" placeholder="Familiya" required>
+                        </p>
+                        <p>
+                            <i class="fa fa-id-card"></i>
+                            <select name="mijoz" id="mijoz" required>
+                                <option value=""></option>
+                                <option value="Tadbirkor">Tadbirkor</option>
+                                <option value="Investor">Investor</option>
+                            </select>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone"></i>
+                            <input type="tel" pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="xx-xxx-xx-xx" id="checking" required>
+                        </p>
+                        <p>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="checking" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="xxxxx" required>
+                        </p>
+                        <span>parol uzunlligi 8 ta belgidan kam bo'lmasligi lozim</span>
+                        <b id="checked"><input type="checkbox" name="" id="checkboxing"> Ro'yxatdan o'tish uchun barcha shartlarga roziman</b>
+                     </div>
+                     <button id="registr">Registratsiya</button>
+                     <p class="logHave">
+                        Hisobingiz bormi?! <a href="sms:+998337238481" id="link">Kirish</a>
+                    </p>
+}
+2.{
+    <div class="title">
+                        <h2>Kirish</h2>
+                        <p>Kirish uchun quyidagi formani to'ldiring</p>
+                     </div>
+                     <div class="inputs">
+                        <p>
+                            <i class="fa fa-envelope"></i>
+                            <input type="tel" id="checking" placeholder="Email" required>
+                        </p>
+                        <p>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="checking" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="Password" required>
+                        </p>
+                        <span>parol uzunlligi 8 ta belgidan kam bo'lmasligi lozim</span>
+                        <a href="#" id="zabil">Parolni unutdingizmi?!</a>
+                        <b id="checked"><input type="checkbox" name="" id="checkboxing"> Kirish uchun barcha shartlarga roziman</b>
+                     </div>
+                     <button id="kirish">Kirish</button>
+                     <p class="DontLog">
+                        Hisobingiz yo'qmi?! <a href="sms:+9" id="link">Kirish</a>
+                    </p>
+}
+
+3.{
+    <div class="title">
+                        <h2>Parolingizni unutdingizmi?!</h2>
+                        <p>Sizga 4 xonali son yuborishimiz uchun telefon raqamingizni kiriting</p>
+                     </div>
+                     <div class="inputs">
+                        <p>
+                            <i class="fa fa-phone"></i>+998
+                            <input type="tel" pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="xx-xxx-xx-xx" id="checking" required>
+                        </p>
+                     </div>
+                     <button id="sendCodePhone">Yuborish</button>    
+}
+
+4.{
+    <div class="title">
+                        <h2>SMS kodni kiriting</h2>
+                        <p>Sizning raqamingizga 4 xonali son yuborildi: <b class="tel" style="color: black; font-weight:800;">+998885784120</b></p>
+                     </div>
+                     <div class="inputs code">
+                        <input type="text" pattern="[0-9]{1}" required>
+                        <input type="text" pattern="[0-9]{1}" required>
+                        <input type="text" pattern="[0-9]{1}" required>
+                        <input type="text" pattern="[0-9]{1}" required>                       
+                     </div>
+                     <p class="config">
+                        <b class="time"><i class="fa fa-hourglass-1"></i> 0:59</b> <strong>Kod kelmadimi? <a href="#" id="resend">Qayta yuborish</a></strong> 
+                     </p>
+                     <button id="sendCode">Yuborish</button>  
+}
+
+5. {
+    <div class="title">
+                        <h2>Yangi parol yaratish</h2>
+                        <p>Yangi parolingizni yarating</p>
+                     </div>
+                     <div class="inputs">
+                        <p>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="checking" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="Yangi parol" required>
+                        </p>                   
+                        <p>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="checking" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="Tasdiqlash" required>
+                        </p>                   
+                        <span>parol uzunlligi 8 ta belgidan kam bo'lmasligi lozim</span>
+                     </div>
+                     <button id="sendNewPassword">Yuborish</button>
+}

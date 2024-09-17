@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+    position: relative;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+}
+.container .col {
+    position: relative;
+    height: 100vh;
+}
+.container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    /* align-content: space-between; */
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;
+}
+form .title {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+form .title h2 {
+    font-size: 36px;
+}
+form .title p {
+    color: rgb(154, 154, 154);
+    font-weight: 500;
+}
+
+form .inputs {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+form .inputs p {
+    position: relative;
+    width: 60%;
+    border: 1px solid silver;
+    padding: 5px 8px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.inputs p input, select {
+    width: 90%;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    outline: none;
+}
+p input {
+    background: transparent;
+}
+.inputs select option {
+    padding: 5px 13px;
+    font-size: 18px;
+    cursor: pointer;
+}
+/* p #checking:valid{
+    box-shadow: 0 0 5px 3px green;
+    background: rgba(0, 128, 0, 0.55);
+}
+p #checking:focus:invalid {
+    box-shadow: 0 0 5px 3px red;
+    background: rgba(255, 0, 0, 0.574);
+} */
+.inputs p i {
+    margin-right: 5px;
+    position: relative;
+    font-size: 24px;
+}
+.inputs span, b {
+    color: rgb(154, 154, 154);
+    font-size: 14px;
+    width: 60%;
+    padding-left: 8px;
+}
+.inputs b {
+    margin: 5px 0 5px 0;
+    font-size: 20px;
+    color: rgb(98, 98, 98);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.inputs input#checkboxing{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+form .inputs a {
+    width: 60%;
+    text-align: end;
+    color: blue;
+    font-size: 18px;
+    font-weight: 600;
+}
+form .code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: row;
+}
+form .code input {
+    height: 80px;
+    width: 60px;
+    padding: 8px 5px;
+    border-radius: 6px;
+    border: 1px solid silver;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 36px;
+}
+form .config {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    gap: 20px;
+    position: relative;
+}
+form .config b.time, strong {
+    font-weight: 800;
+    color: black;
+    font-size: 18px;
+    width: 50%;
+}
+.config a {
+    color: rgb(0, 149, 255);
+    text-decoration: none;
+    letter-spacing: 1.3px;
+}
+form .code input:focus {
+    border: 1.2px solid aqua;
+}
+form button {
+    width: 60%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    padding: 10px 12px;
+    outline: none;
+    font-size: 18px;
+    color: azure;
+    background: blue;
+    margin: 15px 0 15px 0;
+}
+.DontLog, .logHave {
+    font-size: 17px;
+}
+.DontLog a, .logHave a {
+    font-size: 17px;
+    color: blue;
+    font-weight: 600;
+}
+
+form {
+    display: none;
+}
+form#formReg {
+    display: flex;
+}
+@media screen and (min-width:1048px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+    }
+    .left {
+        display: block;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1047px){
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        overflow: hidden;
+    }
+    .left {
+        display: none;
+    }
+    
+}
+@media screen and (max-width:767px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        /* overflow: hidden; */
+    }
+    .left {
+        display: none;
+    }
+    
+}
