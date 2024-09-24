@@ -61,7 +61,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #068f9d;
+    background: rgb(71, 142, 255);
 }
 .selects {
     position: relative;

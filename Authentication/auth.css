@@ -39,7 +39,7 @@ form {
     /* align-content: space-between; */
     justify-content: space-between;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 }
 form .title {
     position: relative;
