@@ -59,6 +59,29 @@ nav .auth {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 15px;
+}
+.auth .name {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+} 
+
+.auth .fa-navicon {
+    display: none;
+}
+.auth .fa-user {
+    margin-left: 8px;
+    font-size: 18px;
+    padding: 3px;
+}
+.auth [p] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 nav .auth button {
     position: relative;
@@ -90,6 +113,9 @@ nav select {
     padding: 4px 18px;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
+    border: 2.5px solid rgb(0, 128, 255);
+    border-radius: 5px;
 }
 
 aside {
@@ -129,6 +155,7 @@ main section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 30px 10px 0px 10px;
+    height: 70vh;
 }
 section .col {
     display: flex;
@@ -233,6 +260,7 @@ section .col .carusel {
         opacity: 0;
     }
 }
+
 .section {
     position: relative;
     padding: 10px 50px;

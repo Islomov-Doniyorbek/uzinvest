@@ -61,11 +61,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(0, 98 , 255);
+    background: #068f9d;
 }
 .selects {
     position: relative;
-    width: 400px;
+    width: 500px;
     border-radius: 12px;
     padding: 12px 18px;
     background: white;
@@ -73,7 +73,7 @@ body {
 .selects p {
     width: 100%;
     margin: 15px 0;
-    font-size: 15px;
+    font-size: 24px;
 }
 .selects select {
     position: relative;

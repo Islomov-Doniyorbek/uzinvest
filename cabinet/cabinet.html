@@ -8,9 +8,126 @@
     <title>Shaxsiy kabinet</title>
 </head>
 <body>
-    
-    <div class="container"></div>
-
+    <div class="container">
+        <h1>Xush kelibsiz "<span id="nick"></span>"</h1>
+        <div class="wrapper">
+            <div class="col">
+                    <label for="ism">Ism <br>
+                        <input type="text" id="ism">
+                        <span class="ism"><br><br></span>
+                    </label>
+                    <label for="fam">Familiya <br>
+                        <input type="text" id="fam">
+                        <span class="fam"><br><br></span>
+                    </label>
+                    <label for="tel">Telefon raqam<br>
+                        <input type="tel" id="tel">
+                        <span class="tel"><br><br></span>
+                    </label>
+                    <label for="date">Tug'ilgan sana<br>
+                        <input type="date" id="date">
+                        <span class="date"><br><br></span>
+                    </label>
+                    <label for="kasb">Kasb<br>
+                        <input type="text" id="kasb">
+                        <span class="kasb"><br><br></span>
+                    </label>
+                    <label for="address">Manzil<br>
+                        <input type="text" id="address">
+                        <span class="address"><br><br></span>
+                    </label>
+                    <button id="save">Saqlash</button>
+            </div>
+            <div class="col">
+                <div class="deploy_project">
+                    Loyiha bo'yicha e'lon joylashtirish uchun <a href="#">bu yerga o'ting</a>
+                </div>
+                <div class="top_ads">
+                    <p>E'loningizni Top'ga chiqarmoqchimisiz?! <br>Unda quyidagi bot orqali to'lovni amalga oshiring va sizning e'loningiz yetakchi o'rinlardan joy oladi</p><a href="#">Telegram bot</a>
+                </div>
+                <div class="chat">Hamkorlar bilan suhbatlaringiz <button>Chat</button></div>
+                <div class="comment">Kompaniya haqida izoh qoldirish <button>Izoh</button></div>
+            </div>
+        </div>
     <script src="/cabinet/cabi.js"></script>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+        import { getDatabase, ref, set, get,child, update, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAGpBTT8n5qJN2DLg0Yij3WddmzUbwVDho",
+          authDomain: "uzinvest-eac73.firebaseapp.com",
+          projectId: "uzinvest-eac73",
+          storageBucket: "uzinvest-eac73.appspot.com",
+          messagingSenderId: "934360038099",
+          appId: "1:934360038099:web:d24940c15e17a09db0b226",
+          measurementId: "G-2CVZMJN98T"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        let db = getDatabase(app)
+        const dbrf = ref(db);
+
+
+        let nick = localStorage.getItem("nick")
+        let nickSpan = document.querySelector("#nick"),
+            ism = document.querySelector("input#ism"),
+            ismSpan = document.querySelector(".ism"),
+            fam = document.querySelector("input#fam"),
+            famSpan = document.querySelector(".fam"),
+            tel = document.querySelector("input#tel"),
+            telSpan = document.querySelector(".tel"),
+            address = document.querySelector("input#address"),
+            addressSpan = document.querySelector(".address"),
+            saveBtn = document.querySelector("button#save"),
+            birth = document.querySelector("input#date"),
+            birthSpan = document.querySelector(".date"),
+            kasb = document.querySelector("input#kasb"),
+            kasbSpan = document.querySelector(".kasb")
+        get(child(dbrf, 'user')).then((snapshot)=>{
+            nickSpan.innerHTML = snapshot.val()[nick].username;
+            if(snapshot.val()[nick].username){
+                ism.style.display = "none";
+                ismSpan.innerHTML = snapshot.val()[nick].username;
+            }
+            saveBtn.onclick = () => {
+                snapshot.val()[nick].familiya = fam.value;
+                update(ref(db, "user/" + nick), {
+                    familiya: fam.value,
+                    birth: birth.value,
+                    address: address.value,
+                });
+            }
+            if(snapshot.val()[nick].familiya){
+                fam.style.display = "none";
+                famSpan.innerHTML = snapshot.val()[nick].familiya;
+            }
+            if(snapshot.val()[nick].address){
+                address.style.display = "none";
+                addressSpan.innerHTML = snapshot.val()[nick].address;
+            }
+            if(snapshot.val()[nick].birth){
+                birth.style.display = "none";
+                birthSpan.innerHTML = snapshot.val()[nick].birth;
+            }
+            if(snapshot.val()[nick].phone){
+                tel.style.display = "none";
+                telSpan.innerHTML = snapshot.val()[nick].phone;
+            }
+            if(snapshot.val()[nick].type){
+                kasb.style.display = "none";
+                kasbSpan.innerHTML = snapshot.val()[nick].type;
+            }
+
+        })
+            
+    </script>
 </body>
 </html>

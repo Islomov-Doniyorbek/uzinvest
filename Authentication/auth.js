@@ -1,6 +1,7 @@
 let forms = document.querySelectorAll("form");
 
 // Formlarni bir biriga bog'laydigan button va linklar
+let input = document.querySelectorAll("input");
 let logHave = document.querySelector("form .logHave #link"),
     DontHave = document.querySelector("form .DontLog #link"),
     zabil = document.querySelector("form #zabil"),
@@ -10,12 +11,14 @@ let logHave = document.querySelector("form .logHave #link"),
     resend = document.querySelector("form #resend"),
     registr = document.querySelector("form #registr");
 
-registr.onclick = ()=> {
-    let ism = document.querySelector(".ism").value;
-
-    localStorage.setItem("user", ism)
+registr.onclick = () => {
+    input.forEach(e => {
+        if (e.value != "") {
+            window.location.href = "/index.html"
+        }
+    })
 }
-
+// localStorage.clear()
 logHave.onclick = (e)=> {
     e.preventDefault();
     forms.forEach(e => {
@@ -87,7 +90,6 @@ sendNewPassword.onclick = (e)=> {
     })
 }
 
-let input = document.querySelectorAll("input");
 input.forEach(e => {
     e.addEventListener('input', () => {
         if (e.validity.valid) {
