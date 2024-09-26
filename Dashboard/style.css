@@ -264,7 +264,6 @@ section .col .carusel {
     font-size: 32px;
     color: rgb(0, 128, 255);
     padding: 15px 0 25px 100px; 
-    margin-left: 100px;
     border-bottom: 1.2px solid rgb(0, 128, 255);
     /* display: inline-block; */
 }
