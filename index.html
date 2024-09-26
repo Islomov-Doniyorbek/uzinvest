@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Dashboard/style.css">
+    <link rel="stylesheet" href="/Dashboard/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Bosh sahifa</title>
 </head>
@@ -28,7 +29,7 @@
                         <option value="ru">Rus</option>
                         <option value="en">Eng</option>
                     </select>
-                    <button id="login"><a href="/Authentication/auth.html#formReg" class="tt">Kirish</a></button>
+                    <button id="login"><a href="/Authentication/auth.html#formReg" class="tt">Hisobga kirish</a></button>
                     <!-- <button id="sign"><a href="/Authentication/auth.html#formLog">Ro'yxatdan o'tish</a></button> -->
                     <p p>
                         <a href="/cabinet/cabinet.html" class="name"></a> &nbsp;
@@ -43,6 +44,7 @@
                 <a href="">Haqida</a>
                 <a href="">Kontakt</a>
                 <a href="">Yordam</a>
+                <a href="" id="exit">Yopish</a>
             </div>
         </aside>
         <main>
@@ -100,52 +102,76 @@
                     </div>
                 </div>
             </section>
-            <!-- <div class="cols">
-            </div> -->
             <div class="sect">
                 <p id="line"><span class="tt">Sharhlar</span> </p>
                 <h2 class="tt">Bizning mijozlarimiz fikrlari</h2>
                 <p pp class="tt">Bizning xizmatlaridan foydalangan investor va tadbirkorlarning fikrlari.
                 </p>
                 <div class="row">
-                    <div class="card">
-                        <div class="prof">
-                            <img src="/Pictures/krember.png" alt="profile" id="profile_img">
-                            <div class="mijoz">
-                                <span id="name">Vartolu Sadettin</span>
-                                <span id="subject" class="tt">Targetolog</span>
+                    <div class="wrapper">
+                        <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/krember.png" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">Vartolu Sadettin</span>
+                                    <span id="subject" class="tt">Targetolog</span>
+                                </div>
                             </div>
+                            <p class="izoh">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
+                            </p>
                         </div>
-                        <p class="izoh">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
-                        </p>
-                    </div>
-                    <div class="card">
-                        <div class="prof">
-                            <img src="/Pictures/artel.png" alt="profile" id="profile_img">
-                            <div class="mijoz">
-                                <span id="name">Efsun Yilmaz</span>
-                                <span id="subject" class="tt">Data analyst</span>
+                        <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/nmedov.png" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">Baykal Yaman</span>
+                                    <span id="subject" class="tt">Director</span>
+                                </div>
                             </div>
+                            <p class="izoh">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
+                            </p>
                         </div>
-                        <p class="izoh">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laboriosam provident suscipit commodi explicabo. Qui iste veniam nihil odio necessitatibus accusantium, et itaque aliquid eius cumque nemo expedita doloribus dolorem hic quidem maxime placeat assumenda commodi.</p>
-                        
-                    </div>
-                    <div class="card">
-                        <div class="prof">
-                            <img src="/Pictures/nestle.png" alt="profile" id="profile_img">
-                            <div class="mijoz">
-                                <span id="name">Cengiz Kurtulus</span>
-                                <span id="subject" class="tt">Businessmen</span>
+                        <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/AliExpress.jpg" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">Murtaza Ferihil</span>
+                                    <span id="subject" class="tt">PM</span>
+                                </div>
                             </div>
+                            <p class="izoh">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
+                            </p>
                         </div>
-                        <p class="izoh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora temporibus, architecto optio cupiditate ex excepturi, ratione, alias illo distinctio animi aut dolor recusandae vitae expedita fuga quaerat atque ea! Porro explicabo debitis quibusdam fugit sed ullam nesciunt odio? Ipsa quisquam quos officia ipsum dicta accusamus!</p>
+                        <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/artel.png" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">Efsun Yilmaz</span>
+                                    <span id="subject" class="tt">Data analyst</span>
+                                </div>
+                            </div>
+                            <p class="izoh">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laboriosam provident suscipit commodi explicabo. Qui iste veniam nihil odio necessitatibus accusantium, et itaque aliquid eius cumque nemo expedita doloribus dolorem hic quidem maxime placeat assumenda commodi.</p>
+                            
+                        </div>
+                        <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/nestle.png" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">Cengiz Kurtulus</span>
+                                    <span id="subject" class="tt">Businessmen</span>
+                                </div>
+                            </div>
+                            <p class="izoh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora temporibus, architecto optio cupiditate ex excepturi, ratione, alias illo distinctio animi aut dolor recusandae vitae expedita fuga quaerat atque ea! Porro explicabo debitis quibusdam fugit sed ullam nesciunt odio? Ipsa quisquam quos officia ipsum dicta accusamus!</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="sect">
                 <h2 class="tt">Bizning platformamizga joylangan ma'lumotlar bazasi</h2>
-                <div class="row">
+                <div class="columns">
                     <div class="box">
                         <div class="count">256+</div>
                         <div class="context">

@@ -1,0 +1,278 @@
+@media screen and (min-width:1024px){
+    header nav {
+       height: 80px;
+    }
+    nav .logo img {
+        width: 80px;
+        height: 80px;
+    }
+    nav .menus {
+        gap: 35px;
+        display: flex;
+    }
+    nav .menus a{
+        font-size: 18px;
+    }
+    nav .auth button {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+    nav select {
+        padding: 4px 18px;
+        font-size: 16px;
+    }
+    nav .auth .fa-navicon {
+        display: none;
+    }
+
+    main section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    section .col img {
+        transform: scale(1);
+        height: 80%;
+    }
+    section .col h1 {
+        font-size: 36px;
+        padding-right: 20px;
+    }
+    section .col h2 {
+        font-size: 36px;
+        padding-right: 20px;
+    }
+    section .col p {
+        padding-right: 20px;
+        font-size: 18px;
+    }
+    section .col .btns {
+        gap: 10px;
+    }
+    section .col .btns button {
+        padding: 12px 26px;
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 10px 40px;
+        /* height: 80vh; */
+    }
+    .section h2 {
+        font-size: 32px;
+    }
+    .section .row {
+        padding: 25px 0 30px 0;
+    }
+    .section .row img {
+        width: 120px;
+        height: 100px;
+    }
+
+    .sect .columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+       
+    }
+}
+@media screen and (min-width:768px) and (max-width:1024px){
+    header nav {
+        height: 70px;
+    }
+    nav .logo img {
+        width: 70px;
+        height: 70px;
+    }
+    nav .menus {
+        gap: 25px;
+        display: flex;
+    }
+    nav .menus a{
+        font-size: 16px;
+    }
+    nav .auth button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    nav select {
+        padding: 4px 10px;
+        font-size: 15px;
+    }
+    .auth .fa-navicon {
+        display: none;
+    }
+
+    main section {
+        grid-template-columns: repeat(1, 1fr);
+        height: 25vh;
+    }
+    section .col img {
+        display: none;
+    }
+    section .col h1 {
+        font-size: 32px;
+        padding-right: 20px;
+    }
+    section .col h2 {
+        font-size: 32px;
+        padding-right: 20px;
+    }
+    section .col p {
+        padding-right: 20px;
+        font-size: 17px;
+    }
+    section .col .btns {
+        gap: 10px;
+    }
+    section .col .btns button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 8px 40px;
+    }
+    .section h2 {
+        font-size: 32px;
+    }
+    .section .row {
+        padding: 25px 0 30px 0;
+    }
+    .section .row img {
+        width: 120px;
+        height: 100px;
+    }
+
+
+    .sect .columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (min-width:502px) and (max-width:768px){
+    header nav {
+        height: 60px;
+    }
+    nav .logo img {
+        width: 60px;
+        height: 60px;
+    }
+    nav .menus {
+        gap: 18px;
+        display: none;
+    }
+    nav select {
+        padding: 4px 10px;
+        font-size: 15px;
+    }
+    nav .auth button {
+        padding: 8px 18px;
+        font-size: 15px;
+    }
+    .auth .fa-navicon {
+        display: block;
+    }
+
+    main section {
+        grid-template-columns: repeat(1, 1fr);
+        height: 25vh;
+    }
+    section .col img {
+        display: none;
+    }
+    section .col h1 {
+        font-size: 26px;
+        padding-right: 20px;
+    }
+    section .col h2 {
+        font-size: 26px;
+        padding-right: 20px;
+    }
+    section .col p {
+        padding-right: 20px;
+        font-size: 18px;
+    }
+    section .col .btns {
+        gap: 8px;
+    }
+    section .col .btns button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 6px 28px;
+    }
+    .section h2 {
+        font-size: 28px;
+    }
+    .section .row {
+        padding: 15px 0 18px 0;
+    }
+    .section .row img {
+        width: 90px;
+        height: 70px;
+    }
+
+    .sect .columns{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media screen and (max-width:502px){
+    header nav {
+        height: 50px;
+    }
+    nav .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    nav .menus {
+        gap: 8px;
+        display: none;
+    }
+    nav select {
+        padding: 4px 10px;
+        font-size: 15px;
+    }
+    nav .auth button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    .auth .fa-navicon {
+        display: block;
+    }
+
+    main section {
+        grid-template-columns: repeat(1, 1fr);
+        height: 60vh;
+    }
+    section .col img {
+        display: none;
+    }
+    section .col .btns {
+        gap: 10px;
+    }
+    section .col .btns button {
+        padding: 8px 16px;
+        font-size: 15px;
+    }
+    
+    .section {
+        padding: 5px 20px;
+    }
+    .section h2 {
+        font-size: 24px;
+    }
+    .section .row {
+        padding: 10px 0 12px 0;
+        gap: 8px;
+    }
+    .section .row img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .sect .columns{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}

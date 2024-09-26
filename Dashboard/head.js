@@ -8,6 +8,19 @@ function profileName() {
 }
 profileName()
 // localStorage.clear()
+function aside() {
+    let navicon = document.querySelector(".fa-navicon");
+    let aside = document.querySelector("aside");
+    let yopish = document.querySelector("#exit");
+
+    navicon.onclick = () => {
+        aside.classList.toggle("bottom")
+    }
+    yopish.onclick = () => {
+        aside.classList.remove("bottom")
+    }
+}
+aside()
 // console.log(document.querySelector("body").innerText);
 function translate() {
     const select = document.querySelector("#lang");
@@ -35,9 +48,10 @@ function translate() {
             fetch(api).then(res => res.json()).then(data => {
                 console.log(data);
                 t[i].innerText = data.responseData.translatedText;
+                fromTrans = select.value;
             })
             
         }
     })
 }
-translate()
+// translate()

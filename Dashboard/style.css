@@ -21,7 +21,6 @@ body {
 header nav {
     position: relative;
     width: 100%;
-    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -32,22 +31,16 @@ nav .logo {
     justify-content: center;
 }
 nav .logo img {
-    width: 70px;
-    height: 70px;
     position: relative;
     border-radius: 50%;
 }
 nav .menus {
     position: relative;
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
-    /* width: 60%; */
 }
 nav .menus a {
     position: relative;
-    font-size: 18px;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
@@ -70,9 +63,7 @@ nav .auth {
     text-transform: capitalize;
 } 
 
-.auth .fa-navicon {
-    display: none;
-}
+
 .auth .fa-user {
     margin-left: 8px;
     font-size: 18px;
@@ -85,9 +76,7 @@ nav .auth {
 }
 nav .auth button {
     position: relative;
-    padding: 12px 26px;
     font-weight: 500;
-    font-size: 18px;
     cursor: pointer;
     border-radius: 6px;
 }
@@ -101,8 +90,6 @@ nav .auth button#login a {
 }
 nav select {
     position: relative;
-    padding: 4px 18px;
-    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     border: 2.5px solid rgb(0, 128, 255);
@@ -114,6 +101,11 @@ aside {
     width: 100%;
     height: 380px;
     top: -380px;
+    background: rgb(0, 128, 255);
+    z-index: 100;
+}
+aside.bottom{
+    top: 0;
 }
 aside .navigation {
     position: relative;
@@ -128,8 +120,8 @@ aside .navigation a {
     width: 40%;
     padding: 8px 13px;
     font-size: 20px;
-    color: rgb(0, 128, 255);
-    border-bottom: 1.3px solid rgb(0, 128, 255);
+    color: rgb(255, 255, 255);
+    border-bottom: 1.3px solid rgb(152, 204, 255);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -139,14 +131,12 @@ main {
     width: 100%;
 }
 main section {
-    margin-top: 25px;
+    margin: 25px 0 25px 0;
 }
 main section {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     padding: 0 10px 0px 10px;
-    height: 90vh;
 }
 section .col {
     display: flex;
@@ -157,43 +147,27 @@ section .col {
     position: relative;
 }
 section .col:first-child {
-    padding-left: 100px;
+    padding-left: 20px;
 }
 section .col img {
     width: 100%;
-    height: 80%;
     padding-right: 50px;
     position: relative;
 }
-section .col h1 {
-    font-size: 36px;
-    padding-right: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-section .col h2 {
-    /* padding: 25px 5px 15px 15px; */
-    font-size: 36px;
-    padding-right: 20px;
+section .col h1, section .col h2 {
     font-weight: 500;
     text-transform: uppercase;
 }
 section .col p {
-    /* padding: 25px 5px 15px 125px; */
-    padding-right: 20px;
-    font-size: 18px;
     font-weight: 500;
 }
 section .col .btns {
     display: flex;
-    width: 100%;
-    gap: 10px;
+    /* width: 100%; */
 }
 section .col .btns button {
     position: relative;
-    padding: 12px 26px;
     font-weight: 500;
-    font-size: 18px;
     cursor: pointer;
     border-radius: 8px;
 }
@@ -214,80 +188,21 @@ section .col .btns button#investor {
     outline: none;
     border: 2px outset rgb(0, 128, 255);
 }
-section#asosiy img {
-    /* transform: scale(1); */
-}
-section .col .carusel {
-    position: absolute;
-    top: 150px;
-    left: 150px;
-    width: 300px;
-    height: 300px;
-}
-.carusel span {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
-    transform-origin: 150px 150px;
-    font-size: 20px;
-    color: azure;
-    background: rgb(0, 128, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: carusel 5s linear infinite;
-    animation-delay: calc(0.5s * var(--i));
-}
-@keyframes carusel {
-    0% {
-        transform: scale(0) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
-    }
-    90% {
-        opacity: 1;
-        transform: scale(1.2) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
-    }
-    100% {
-        transform: scale(1.2) translate(calc(var(--j) * 80px), calc(var(--i) * 60px));
-        opacity: 0;
-    }
-}
 
 .section {
     position: relative;
-    padding: 10px 50px;
-    /* margin: 40px 0; */
-    /* height: 100vh; */
 }
 .section h2 {
-    font-size: 32px;
     color: rgb(0, 128, 255);
-    padding: 15px 0 25px 100px; 
     border-bottom: 1.2px solid rgb(0, 128, 255);
-    /* display: inline-block; */
 }
 .section .row {
-    padding: 25px 0 30px 100px;
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1.2px solid rgb(0, 128, 255); 
-}
-.cols {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    height: 180px;
-    justify-content: center;
-    padding-left: 100px;
-}
-.section .row img {
-    width: 120px;
-    height: 100px;
+    border-bottom: 1.2px solid rgb(0, 128, 255);
 }
 section #line {
     width: 100%;
@@ -298,29 +213,53 @@ section #line {
 #line span {
     background: rgb(172, 213, 255);
     color: rgb(0, 128, 255);
-    padding: 5px 25px 5px 10px;
+    padding: 5px 25px 5px 20px;
     position: relative;
     z-index: 645;
     box-shadow: 0 0 10px 2px rgb(172, 213, 255);
 }
 .sect {
     width: 100%;
+    height: 80vh;
     position: relative;
-    height: 90vh;
+    /* margin: 20px 0; */
+}
+.sect:last-child {
+    width: 100%;
+    height: 450px;
+    position: relative;
     /* margin: 20px 0; */
 }
 .sect h2, .sect #line, [pp]{
-    padding: 25px 0 25px 100px;
+    padding: 25px 0 25px 20px;
 }
 
 .sect .row {
     position: relative;
-    padding: 0 10px 0 110px;
+    padding: 0 10px 0 10px;
     width: 100%;
-    
     display: flex;
     gap: 25px;
     overflow-x: auto;
+}
+.sect .row::-webkit-scrollbar {
+    height: 3px;
+    background: rgba(152, 203, 255, 0.453);
+}
+.sect .row::-webkit-scrollbar-button {
+    height: 3px;
+    width: 5px;
+    background: rgba(0, 128, 255, 0.671);
+}
+.sect .row::-webkit-scrollbar-thumb {
+    height: 3px;
+    background: rgb(120, 188, 255);
+}
+.sect .wrapper {
+    position: relative;
+    /* min-width: 100vw; */
+    display: flex;
+    gap: 10px;
 }
 .sect .row .card {
     position: relative;
@@ -328,8 +267,6 @@ section #line {
     height: 300px;
     display: flex;
     gap: 35px;
-    /* align-items: flex-start;
-    justify-content: center; */
     flex-direction: column;
     padding: 25px;
     border: 1px solid silver;
@@ -367,8 +304,11 @@ section #line {
 }
 .sect .box {
     position: relative;
-    width: 350px;
+    /* width: 33%; */
     height: 300px;
+    border: 1.2px solid silver;
+    padding: 8px;
+    border-radius: 5px;
 }
 .box .count {
     position: relative;
@@ -497,3 +437,6 @@ footer .wrapid {
 .foot a {
     color: white;
 }
+
+
+
