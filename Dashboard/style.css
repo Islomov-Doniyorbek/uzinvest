@@ -264,13 +264,14 @@ section .col .carusel {
     font-size: 32px;
     color: rgb(0, 128, 255);
     /* padding: 15px 0 25px 15px; */
-    /*margin-left: 100px;*/
+    margin-left: 100px;
     border-bottom: 1.2px solid rgb(0, 128, 255);
     /* display: inline-block; */
 }
 .section .row {
-    padding: 25px 0 30px 100px;
+    padding: 25px 0 30px 0;
     position: relative;
+    margin-left: 100px;
     width: 100%;
     display: flex;
     align-items: center;
