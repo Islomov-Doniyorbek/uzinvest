@@ -318,7 +318,7 @@ section #line {
     position: relative;
     padding: 0 10px 0 110px;
     width: 100%;
-    min-width: 1000px;
+    
     display: flex;
     gap: 25px;
     overflow-x: auto;
