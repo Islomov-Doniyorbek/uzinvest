@@ -275,7 +275,7 @@ section .col .carusel {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border-bottom: 1.2px solid rgb(0, 128, 255); */
+    border-bottom: 1.2px solid rgb(0, 128, 255); 
 }
 .cols {
     display: flex;
