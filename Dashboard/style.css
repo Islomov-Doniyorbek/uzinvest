@@ -307,7 +307,7 @@ section #line {
 .sect {
     width: 100%;
     position: relative;
-    height: 50vh;
+    height: 70vh;
     /* margin: 20px 0; */
 }
 .sect h2, .sect #line, [pp]{
