@@ -23,7 +23,6 @@ header nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
 }
 nav .logo {
     display: flex;
@@ -129,9 +128,10 @@ aside .navigation a {
 main {
     position: relative;
     width: 100%;
+    
 }
 main section {
-    margin: 25px 0 25px 0;
+    margin: 25px 0 25px 20px;
 }
 main section {
     position: relative;
@@ -140,14 +140,11 @@ main section {
 }
 section .col {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-evenly;
     flex-direction: column;
     gap: 25px;
     position: relative;
-}
-section .col:first-child {
-    padding-left: 20px;
 }
 section .col img {
     width: 100%;
@@ -203,7 +200,27 @@ section .col .btns button#investor {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1.2px solid rgb(0, 128, 255);
+    overflow-x: auto;
 }
+
+.section .row::-webkit-scrollbar {
+    height: 3px;
+    background: rgba(152, 203, 255, 0.453);
+}
+.section .row .sponsors {
+    display: flex;
+
+}
+.section .row::-webkit-scrollbar-button {
+    height: 3px;
+    width: 5px;
+    background: rgba(0, 128, 255, 0.671);
+}
+.section .row::-webkit-scrollbar-thumb {
+    height: 3px;
+    background: rgb(120, 188, 255);
+}
+
 section #line {
     width: 100%;
     position: relative;
@@ -224,19 +241,13 @@ section #line {
     position: relative;
     /* margin: 20px 0; */
 }
-.sect:last-child {
-    width: 100%;
-    height: 450px;
-    position: relative;
-    /* margin: 20px 0; */
-}
 .sect h2, .sect #line, [pp]{
-    padding: 25px 0 25px 20px;
+    padding: 10px 0 10px 20px;
 }
 
 .sect .row {
     position: relative;
-    padding: 0 10px 0 10px;
+    padding: 10px;
     width: 100%;
     display: flex;
     gap: 25px;
@@ -256,10 +267,8 @@ section #line {
     background: rgb(120, 188, 255);
 }
 .sect .wrapper {
-    position: relative;
-    /* min-width: 100vw; */
     display: flex;
-    gap: 10px;
+    gap: 10px; 
 }
 .sect .row .card {
     position: relative;
@@ -272,6 +281,20 @@ section #line {
     border: 1px solid silver;
     border-radius: 15% 0% / 15% 0%;
     transition: 0.9s ease;
+    overflow-y: auto;
+}
+.sect .row .card::-webkit-scrollbar {
+    height: 3px;
+    background: rgba(152, 203, 255, 0.453);
+}
+.sect .row .card::-webkit-scrollbar-button {
+    height: 3px;
+    width: 2px;
+    background: rgba(0, 128, 255, 0.671);
+}
+.sect .row .card::-webkit-scrollbar-thumb {
+    height: 3px;
+    background: rgb(120, 188, 255);
 }
 .sect .card:hover {
     background: rgb(0, 128, 255);
@@ -302,13 +325,15 @@ section #line {
     font-size: 14px;
     font-weight: 600;
 }
-.sect .box {
+
+.secto .box {
     position: relative;
-    /* width: 33%; */
-    height: 300px;
     border: 1.2px solid silver;
     padding: 8px;
     border-radius: 5px;
+}
+.secto .columns {
+    position: relative;
 }
 .box .count {
     position: relative;
@@ -364,15 +389,9 @@ footer {
 }
 footer .wrapid {
     position: relative;
-    padding: 35px 35px 25px 100px;
+    padding: 35px 35px 25px 20px;
 }
-.wrapid .link_foot_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-columns: 28% 22% 25% 25%; */
-    gap: 10px;
-    position: relative;
-}
+
 .link_foot_grid .col {
     /* border: 1px solid; */
     min-height: 100px;
@@ -381,7 +400,7 @@ footer .wrapid {
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 8px;
     flex-direction: column;
 }
 .link_foot_grid h3
@@ -440,3 +459,8 @@ footer .wrapid {
 
 
 
+/* Favicon uchun maxsus stil */
+
+link[href="/Pictures/logo.jpg"] {
+    border-radius: 50%; 
+}

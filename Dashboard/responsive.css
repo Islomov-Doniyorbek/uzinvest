@@ -1,6 +1,7 @@
 @media screen and (min-width:1024px){
     header nav {
        height: 80px;
+       justify-content: space-around;
     }
     nav .logo img {
         width: 80px;
@@ -60,22 +61,42 @@
         font-size: 32px;
     }
     .section .row {
-        padding: 25px 0 30px 0;
+        padding: 25px 20px 30px 0;
     }
-    .section .row img {
-        width: 120px;
+    .sponsors {
+        display: flex;
+        padding: 10px 0 12px 0;
+        gap: 15px;
+    }
+    .section .row .sponsors img {
+        width: 110px;
         height: 100px;
     }
 
-    .sect .columns{
+    .secto .columns{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-       
+        min-height: 300px;
+        padding-left: 20px;
+        position: relative;
+    }
+    .sect .columns .box {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .wrapid .link_foot_grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        position: relative;
     }
 }
 @media screen and (min-width:768px) and (max-width:1024px){
     header nav {
         height: 70px;
+        justify-content: space-around;
     }
     nav .logo img {
         width: 70px;
@@ -102,7 +123,7 @@
 
     main section {
         grid-template-columns: repeat(1, 1fr);
-        height: 25vh;
+        height: 55vh;
     }
     section .col img {
         display: none;
@@ -136,20 +157,41 @@
     .section .row {
         padding: 25px 0 30px 0;
     }
-    .section .row img {
-        width: 120px;
-        height: 100px;
+    .sponsors {
+        display: flex;
+        padding: 10px 0 12px 0;
+        gap: 15px;
+    }
+    .section .row .sponsors img {
+        width: 100px;
+        height: 90px;
     }
 
 
-    .sect .columns{
+    .secto .columns{
         display: grid;
         grid-template-columns: repeat(3,1fr);
+        min-height: 300px;
+        padding: 20px;
+        position: relative;
+    }
+    .sect .columns .box {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .wrapid .link_foot_grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        position: relative;
     }
 }
 @media screen and (min-width:502px) and (max-width:768px){
     header nav {
         height: 60px;
+        justify-content: space-between;
     }
     nav .logo img {
         width: 60px;
@@ -173,7 +215,7 @@
 
     main section {
         grid-template-columns: repeat(1, 1fr);
-        height: 25vh;
+        height: 60vh;
     }
     section .col img {
         display: none;
@@ -207,19 +249,40 @@
     .section .row {
         padding: 15px 0 18px 0;
     }
-    .section .row img {
-        width: 90px;
-        height: 70px;
+    .sponsors {
+        display: flex;
+        padding: 10px 0 12px 0;
+        gap: 15px;
+    }
+    .section .row .sponsors img {
+        width: 70px;
+        height: 60px;
     }
 
-    .sect .columns{
+    .secto .columns{
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        min-height: 300px;
+        padding: 20px;
+        position: relative;
+    }
+    .sect .columns .box {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .wrapid .link_foot_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        position: relative;
     }
 }
 @media screen and (max-width:502px){
     header nav {
         height: 50px;
+        justify-content: space-between;
     }
     nav .logo img {
         width: 50px;
@@ -243,7 +306,7 @@
 
     main section {
         grid-template-columns: repeat(1, 1fr);
-        height: 60vh;
+        min-height: 70vh;
     }
     section .col img {
         display: none;
@@ -262,17 +325,48 @@
     .section h2 {
         font-size: 24px;
     }
-    .section .row {
+    .sponsors {
+        display: flex;
         padding: 10px 0 12px 0;
-        gap: 8px;
+        gap: 15px;
     }
-    .section .row img {
-        width: 80px;
+    .section .row .sponsors img {
+        width: 70px;
         height: 60px;
     }
 
-    .sect .columns{
+    .secto h2 {
+        padding: 20px 0 20px 20px;
+    }
+    .secto .columns{
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        min-height: 300px;
+        gap: 10px;
+        padding: 20px;
+        position: relative;
     }
+    .secto .tt{
+        font-size: 16px;
+    }
+    .secto .columns .box {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .wrapid .link_foot_grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        position: relative;
+    }
+    .foot {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .foot a {
+        font-size: 16px;
+    }
+    
 }
