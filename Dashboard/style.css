@@ -281,21 +281,8 @@ section #line {
     border: 1px solid silver;
     border-radius: 15% 0% / 15% 0%;
     transition: 0.9s ease;
-    overflow-y: auto;
 }
-.sect .row .card::-webkit-scrollbar {
-    height: 3px;
-    background: rgba(152, 203, 255, 0.453);
-}
-.sect .row .card::-webkit-scrollbar-button {
-    height: 3px;
-    width: 2px;
-    background: rgba(0, 128, 255, 0.671);
-}
-.sect .row .card::-webkit-scrollbar-thumb {
-    height: 3px;
-    background: rgb(120, 188, 255);
-}
+
 .sect .card:hover {
     background: rgb(0, 128, 255);
 }
