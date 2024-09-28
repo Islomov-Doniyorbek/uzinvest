@@ -78,6 +78,7 @@
         grid-template-columns: repeat(3,1fr);
         min-height: 300px;
         padding: 20px;
+        gap: 10px;
         position: relative;
     }
     .sect .columns .box {
@@ -173,6 +174,7 @@
         grid-template-columns: repeat(3,1fr);
         min-height: 300px;
         padding: 20px;
+        gap: 10px;
         position: relative;
     }
     .sect .columns .box {
@@ -263,6 +265,7 @@
         display: grid;
         grid-template-columns: repeat(1,1fr);
         min-height: 300px;
+        gap: 10px;
         padding: 20px;
         position: relative;
     }
