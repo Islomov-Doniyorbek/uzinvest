@@ -312,7 +312,8 @@ section #line {
     font-size: 14px;
     font-weight: 600;
 }
-
+.secto h2 {
+    padding-left:20px;
 .secto .box {
     position: relative;
     border: 1.2px solid silver;
