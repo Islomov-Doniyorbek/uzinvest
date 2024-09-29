@@ -92,10 +92,12 @@ sendNewPassword.onclick = (e)=> {
 
 input.forEach(e => {
     e.addEventListener('input', () => {
-        if (e.validity.valid) {
-          e.parentElement.style.boxShadow = '0 0 8px 3px green'; // Valid holat uchun yashil rang
-        } else {
-            e.parentElement.style.boxShadow = '0 0 8px 3px red'; // Valid holat uchun yashil rang
+        if (e.type != "checkbox") {
+            if (e.validity.valid) {
+                e.parentElement.style.boxShadow = '0 0 8px 3px green'; // Valid holat uchun yashil rang
+              } else {
+                  e.parentElement.style.boxShadow = '0 0 8px 3px red'; // Valid holat uchun yashil rang
+              }
         }
       });
 })

@@ -62,11 +62,11 @@
                      <div class="inputs">
                         <p>
                             <i class="fa fa-envelope"></i>
-                            <input type="tel" id="checking" placeholder="Email" required>
+                            <input type="text" class="logUser" id="checking" placeholder="username" required>
                         </p>
                         <p>
                             <i class="fa fa-lock"></i>
-                            <input type="password" id="checking" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="Password" required>
+                            <input type="password" id="checking" class="logPass" maxlength="8" pattern="[a-z, 0-9]{5,8}" placeholder="Password" required>
                         </p>
                         <span>parol uzunlligi 8 ta belgidan kam bo'lmasligi lozim</span>
                         <a href="#" id="zabil">Parolni unutdingizmi?!</a>
@@ -154,6 +154,7 @@
         let db = getDatabase(app)
 
         let formReg = document.querySelector("#registr");
+        let formLog = document.querySelector("#kirish");
         const dbrf = ref(db);
 
         formReg.addEventListener("click", (e)=>{
@@ -166,9 +167,22 @@
                 phone: document.querySelector('.tel').value,
                 password: document.querySelector('.parol').value
             });
-            localStorage.setItem("nick", document.querySelector(".username").value);
+            get(child(dbrf, 'user')).then((snap)=>{
+                localStorage.setItem("nick", snap.val()[document.querySelector(".username").value].nickname);
+            })
             alert("Muvaffaqiyatli ro'yxatdan o'tdingiz!!!");
         })
+        formLog.addEventListener("click", (e)=>{
+            e.preventDefault()
+            get(child(dbrf, 'user')).then((snapshot)=>{
+                if(snapshot.val()[document.querySelector(".logUser").value] && snapshot.val()[document.querySelector(".logUser").value].password == document.querySelector(".logPass").value){
+                    window.location.href = "/index.html";
+                }
+            })
+            alert("Success")
+        })
+
+        
       </script>
 </body>
 </html>

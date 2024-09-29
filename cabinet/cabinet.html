@@ -43,7 +43,7 @@
                     Loyiha bo'yicha e'lon joylashtirish uchun <a href="#">bu yerga o'ting</a>
                 </div>
                 <div class="top_ads">
-                    <p>E'loningizni Top'ga chiqarmoqchimisiz?! <br>Unda quyidagi bot orqali to'lovni amalga oshiring va sizning e'loningiz yetakchi o'rinlardan joy oladi</p><a href="#">Telegram bot</a>
+                    <p>E'loningizni Top'ga chiqarmoqchimisiz?! <br>Unda quyidagi link orqali to'lovni amalga oshiring va sizning e'loningiz yetakchi o'rinlardan joy oladi</p><a href="#">To'lov</a>
                 </div>
                 <div class="chat">Hamkorlar bilan suhbatlaringiz <button>Chat</button></div>
                 <div class="comment">Kompaniya haqida izoh qoldirish <button>Izoh</button></div>
@@ -104,6 +104,7 @@
                     birth: birth.value,
                     address: address.value,
                 });
+                window.location.href = '/cabinet/cabinet.html'
             }
             if(snapshot.val()[nick].familiya){
                 fam.style.display = "none";
@@ -124,6 +125,9 @@
             if(snapshot.val()[nick].type){
                 kasb.style.display = "none";
                 kasbSpan.innerHTML = snapshot.val()[nick].type;
+            }
+            if(snapshot.val()[nick].address && snapshot.val()[nick].birth && snapshot.val()[nick].familiya) {
+                saveBtn.style.display = "none";
             }
 
         })

@@ -21,7 +21,6 @@ h1 {
 .container .wrapper {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 .container .wrapper .col {
     display: flex;
@@ -35,7 +34,7 @@ h1 {
     color: rgb(0, 98, 255);
     font-size: 20px;
     padding-bottom: 8px;
-    border-bottom: 1.2px solid rgb(0, 98, 255);
+    /* border-bottom: 1.2px solid rgb(0, 98, 255); */
 }
 .col label input, button {
     width: 70%;
@@ -66,4 +65,30 @@ h1 {
     font-size: 20px;
     position: relative;
     padding: 5px 25px 5px 10px;
+}
+
+
+@media screen and (min-width: 1024px){
+    .wrapper {
+       grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+     }
+}
+@media screen and (min-width: 502px) and (max-width: 768px){
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+     }
+}
+@media screen and (max-width: 502px){
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+     }
+     .wrapper .col:last-child {
+        border-top: 1px solid rgb(0, 98, 255);
+     }
 }
