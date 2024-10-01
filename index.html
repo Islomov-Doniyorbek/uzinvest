@@ -124,6 +124,7 @@
                             <p class="izoh">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
                             </p>
+                            <p class="vaqt">20.9.2024</p>
                         </div>
                         <div class="card">
                             <div class="prof">
@@ -136,6 +137,7 @@
                             <p class="izoh">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
                             </p>
+                            <p class="vaqt">20.9.2024</p>
                         </div>
                         <div class="card">
                             <div class="prof">
@@ -148,6 +150,7 @@
                             <p class="izoh">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut eaque quaerat fugit iure adipisci officia nesciunt accusantium dolore provident?
                             </p>
+                            <p class="vaqt">20.9.2024</p>
                         </div>
                         <div class="card">
                             <div class="prof">
@@ -158,7 +161,7 @@
                                 </div>
                             </div>
                             <p class="izoh">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laboriosam provident suscipit commodi explicabo. Qui iste veniam nihil odio necessitatibus accusantium, et itaque aliquid eius cumque nemo expedita doloribus dolorem hic quidem maxime placeat assumenda commodi.</p>
-                            
+                            <p class="vaqt">20.9.2024</p>
                         </div>
                         <div class="card">
                             <div class="prof">
@@ -169,6 +172,7 @@
                                 </div>
                             </div>
                             <p class="izoh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora temporibus, architecto optio cupiditate ex excepturi, ratione, alias illo distinctio animi aut dolor recusandae vitae expedita fugas.</p>
+                            <p class="vaqt">20.9.2024</p>
                         </div>
                     </div>
                 </div>
@@ -303,7 +307,28 @@
                 }
             })
         }
-profileName()
+        profileName()
+        let wrapper = document.querySelector(".wrapper");
+        get(child(dbrf, 'comments')).then((snapshot)=>{
+            for(const key in snapshot.val()){
+                console.log(snapshot.val()[key]);
+                wrapper.innerHTML+=`
+                <div class="card">
+                            <div class="prof">
+                                <img src="/Pictures/nestle.png" alt="profile" id="profile_img">
+                                <div class="mijoz">
+                                    <span id="name">${snapshot.val()[key].user} ${snapshot.val()[key].surname}</span>
+                                    <span id="subject" class="tt">${snapshot.val()[key].job}</span>
+                                </div>
+                            </div>
+                            <p class="izoh">${snapshot.val()[key].comment}</p>
+                            <p class="vaqt">${snapshot.val()[key].time}</p>
+                        </div>
+                `;
+            }
+        })
+
+
     </script>
 </body>
 </html>

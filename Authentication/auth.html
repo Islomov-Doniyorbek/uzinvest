@@ -165,7 +165,10 @@
                 nickname: document.querySelector('.username').value,
                 type: document.querySelector('#mijoz').value,
                 phone: document.querySelector('.tel').value,
-                password: document.querySelector('.parol').value
+                password: document.querySelector('.parol').value,
+                birth: "",
+                address: "",
+                familiya: ""
             });
             get(child(dbrf, 'user')).then((snap)=>{
                 localStorage.setItem("nick", snap.val()[document.querySelector(".username").value].nickname);

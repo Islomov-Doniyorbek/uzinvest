@@ -9,35 +9,51 @@
 </head>
 <body>
     <div class="container">
+        <div class="commentBox">
+            <div class="combox">
+                <h3 class="title">
+                    Platforma haqida izoh qoldiring!
+                </h3>
+                <textarea name="comment" id="comment" cols="30" rows="10" required></textarea>
+                <button id="send">Jo'natish</button>
+                <p id="thankYou" style="color: lime; font-size: 24px; font-weight: 700; ">E'tiboringiz uchun rahmat!</p>
+            </div>
+        </div>
         <h1>Xush kelibsiz "<span id="nick"></span>"</h1>
         <div class="wrapper">
-            <div class="col">
+            
+            <div class="col col1">
                     <label for="ism">Ism <br>
-                        <input type="text" id="ism">
+                        <input type="text" id="ism" name="ism" required>
                         <span class="ism"><br><br></span>
                     </label>
                     <label for="fam">Familiya <br>
-                        <input type="text" id="fam">
+                        <input type="text" id="fam" name="familiya" required>
                         <span class="fam"><br><br></span>
                     </label>
+                    <label for="fam">Username <br>
+                        <input type="text" id="user" name="nickname" required>
+                        <span class="user"><br><br></span>
+                    </label>
                     <label for="tel">Telefon raqam<br>
-                        <input type="tel" id="tel">
+                        <input type="tel" id="tel" name="phone"  required>
                         <span class="tel"><br><br></span>
                     </label>
                     <label for="date">Tug'ilgan sana<br>
-                        <input type="date" id="date">
+                        <input type="date" id="date" required>
                         <span class="date"><br><br></span>
                     </label>
                     <label for="kasb">Kasb<br>
-                        <input type="text" id="kasb">
+                        <input type="text" id="kasb" required>
                         <span class="kasb"><br><br></span>
                     </label>
                     <label for="address">Manzil<br>
-                        <input type="text" id="address">
+                        <input type="text" id="address" required>
                         <span class="address"><br><br></span>
                     </label>
                     <button id="save">Saqlash</button>
-            </div>
+                    <button id="edit">Tahrirlash</button>
+                </div>
             <div class="col">
                 <div class="deploy_project">
                     Loyiha bo'yicha e'lon joylashtirish uchun <a href="#">bu yerga o'ting</a>
@@ -45,8 +61,8 @@
                 <div class="top_ads">
                     <p>E'loningizni Top'ga chiqarmoqchimisiz?! <br>Unda quyidagi link orqali to'lovni amalga oshiring va sizning e'loningiz yetakchi o'rinlardan joy oladi</p><a href="#">To'lov</a>
                 </div>
-                <div class="chat">Hamkorlar bilan suhbatlaringiz <button>Chat</button></div>
-                <div class="comment">Kompaniya haqida izoh qoldirish <button>Izoh</button></div>
+                <div class="chat">Hamkorlar bilan suhbatlaringiz <button id="chat">Chat</button></div>
+                <div class="comment">Kompaniya haqida izoh qoldirish <button id="commentBtn">Izoh</button></div>
             </div>
         </div>
     <script src="/cabinet/cabi.js"></script>
@@ -82,6 +98,8 @@
             ismSpan = document.querySelector(".ism"),
             fam = document.querySelector("input#fam"),
             famSpan = document.querySelector(".fam"),
+            nicksSpan = document.querySelector(".user"),
+            nicks = document.querySelector("input#user"),
             tel = document.querySelector("input#tel"),
             telSpan = document.querySelector(".tel"),
             address = document.querySelector("input#address"),
@@ -90,25 +108,68 @@
             birth = document.querySelector("input#date"),
             birthSpan = document.querySelector(".date"),
             kasb = document.querySelector("input#kasb"),
-            kasbSpan = document.querySelector(".kasb")
+            kasbSpan = document.querySelector(".kasb");
+
+        let editBTN = document.querySelector("#edit");
+        let spans = document.querySelectorAll(".col1 span");
+        let inputs = document.querySelectorAll(".col1 input");
+
         get(child(dbrf, 'user')).then((snapshot)=>{
             nickSpan.innerHTML = snapshot.val()[nick].username;
-            if(snapshot.val()[nick].username){
-                ism.style.display = "none";
-                ismSpan.innerHTML = snapshot.val()[nick].username;
-            }
-            saveBtn.onclick = () => {
+            editBTN.onclick = () => {
+                for (let i = 0; i < spans.length; i++) {
+                    spans[i].style.display = "none"
+                    inputs[i].style.display = "block"
+                    
+                }
+                editBTN.style.display = "none";
+                saveBtn.style.display = "block";
+                saveBtn.onclick = () => {
                 snapshot.val()[nick].familiya = fam.value;
                 update(ref(db, "user/" + nick), {
+                    username: ism.value,
+                    nickname: nicks.value,
+                    type: kasb.value,
+                    phone: tel.value,
                     familiya: fam.value,
                     birth: birth.value,
                     address: address.value,
                 });
-                window.location.href = '/cabinet/cabinet.html'
+                editBTN.style.display = "block";
+                window.location.href = '/cabinet/cabinet.html';
+            }
+            }
+            if(snapshot.val()[nick].username){
+                ism.style.display = "none";
+                ismSpan.innerHTML = snapshot.val()[nick].username;
+            }
+            
+            saveBtn.onclick = () => {
+                    snapshot.val()[nick].familiya = fam.value;
+                    if(address.value == "" || birth.value == "" || kasb.value == ""){
+                        update(ref(db, "user/" + nick), {
+                            familiya: fam.value,
+                            birth: birth.value,
+                            address: address.value,
+                        });
+                        window.location.href = '/cabinet/cabinet.html';
+                        
+                    }
+                    editBTN.style.display = "block";
+                }
+           
+            if(saveBtn.style.display != "none"){
+                editBTN.style.display = "block";
+            }else{
+                editBTN.style.display = "none";
             }
             if(snapshot.val()[nick].familiya){
                 fam.style.display = "none";
                 famSpan.innerHTML = snapshot.val()[nick].familiya;
+            }
+            if(snapshot.val()[nick].nickname){
+                nicks.style.display = "none";
+                nicksSpan.innerHTML = snapshot.val()[nick].nickname;
             }
             if(snapshot.val()[nick].address){
                 address.style.display = "none";
@@ -130,8 +191,54 @@
                 saveBtn.style.display = "none";
             }
 
-        })
             
+
+        })
+           
+        let commentBtn = document.querySelector("#commentBtn");
+        let sendCommentBtn = document.querySelector("#send");
+        let h3Title = document.querySelector("#send");
+        let pSuccess = document.querySelector("#thankYou");
+        let textarea = document.querySelector("textarea");
+        let commentbox = document.querySelector(".commentBox");
+
+        get(child(dbrf, 'user')).then((snapshot)=>{
+            commentBtn.onclick = () =>{
+                commentbox.classList.toggle("screen")
+            }
+            sendCommentBtn.onclick = () => {
+                    const times = new Date();
+                    let vaqt = times.getDate();
+                    let vaqt1 = times.getMonth();
+                    let vaqt2 = times.getFullYear();
+                    let vaqqt = `${vaqt}.${vaqt1+1}.${vaqt2}`
+                    if(textarea.value){
+                        set(ref(db, 'comments/' + snapshot.val()[nick].username), {
+                            user: snapshot.val()[nick].username,
+                            surname: snapshot.val()[nick].familiya,
+                            job: snapshot.val()[nick].type,
+                            time: vaqqt,
+                            comment: textarea.value,
+                        });
+                        alert("success");
+                        sendCommentBtn.style.display = "none"
+                        textarea.style.display = "none"
+                        h3Title.style.display = "none"
+                        pSuccess.style.display = "block";
+                        setTimeout(()=>{
+                            commentbox.classList.toggle("hide");
+                        }, 2000);
+                        setTimeout(()=>{
+                            location.reload();
+                        }, 3300)
+                    }else{
+                        textarea.style.border = "1px solid red";
+                    }
+            }
+
+        })
+
+
     </script>
 </body>
 </html>

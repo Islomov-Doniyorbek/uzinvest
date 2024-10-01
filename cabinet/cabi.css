@@ -36,7 +36,7 @@ h1 {
     padding-bottom: 8px;
     /* border-bottom: 1.2px solid rgb(0, 98, 255); */
 }
-.col label input, button {
+.col label input, .col button {
     width: 70%;
     padding: 2px 4px;
     outline: none;
@@ -91,4 +91,70 @@ h1 {
      .wrapper .col:last-child {
         border-top: 1px solid rgb(0, 98, 255);
      }
+}
+/* #edit {
+    display: none;
+} */
+.commentBox {
+    position: absolute;
+    width: 100%;
+    min-height: 200px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background: rgba(214, 214, 214, 0.264);
+    top: -500px;
+}
+.commentBox .combox {
+    position: relative;
+    width: 320px;
+    color: azure;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 1.2px solid rgb(0, 98, 255);
+    background: rgb(0, 98, 255);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.combox #thankYou {
+    text-align: center;
+    display: none;
+}
+.combox textarea {
+    position: relative;
+    border: 1.2px solid rgb(0, 98, 255);
+    outline: none;
+    resize: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+}
+.combox button {
+    border: 1.2px solid azure;
+    outline: none;
+    position: relative;
+    width: 70%;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    background: transparent;
+    color: azure;
+}
+.commentBox.screen{
+    transition: 1.2s;
+    top: 0;
+}
+.commentBox.hide{
+    transition: 1.2s;
+    top: -500px;
 }
