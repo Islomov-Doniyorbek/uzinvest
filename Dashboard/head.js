@@ -49,9 +49,19 @@ function translate() {
 function profil() {
     let userIcon = document.querySelector(".fa-user");
     let profil = document.querySelector(".profile");
-
+    
     userIcon.onclick = () => {
         profil.classList.toggle("screen");
     }
 }
 profil()
+function checkingUser() {
+    let userIcon = document.querySelector(".fa-user");
+    if (localStorage.getItem("nick")) {
+        document.querySelector("#login").style.display = "none";
+    } else {
+        userIcon.style.display = "none"
+    }
+    console.log(userIcon);
+}
+checkingUser()
