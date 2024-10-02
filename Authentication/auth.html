@@ -178,11 +178,14 @@
         formLog.addEventListener("click", (e)=>{
             e.preventDefault()
             get(child(dbrf, 'user')).then((snapshot)=>{
-                if(snapshot.val()[document.querySelector(".logUser").value] && snapshot.val()[document.querySelector(".logUser").value].password == document.querySelector(".logPass").value){
+                if(snapshot.val()[document.querySelector(".logUser").value].password == document.querySelector(".logPass").value){
                     window.location.href = "/index.html";
+                    alert("Success");
+                    let data = localStorage.getItem("nick");
+                    data = snapshot.val()[document.querySelector(".logUser").value].nickname;
+                    localStorage.setItem("nick", data);
                 }
             })
-            alert("Success")
         })
 
         

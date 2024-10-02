@@ -101,3 +101,10 @@ input.forEach(e => {
         }
       });
 })
+
+if (localStorage.getItem("nick")) {
+    let sorov = confirm("Eski akkauntingiz bilan kirasizmi?!");
+    if (sorov == false) {
+        localStorage.clear();
+    }
+}
