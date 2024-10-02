@@ -53,11 +53,12 @@ nav .auth {
     justify-content: center;
     gap: 15px;
 }
-.auth .name {
+.profile .name {
     position: relative;
-    font-size: 18px;
+    /* font-size: 18px; */
     font-weight: 600;
-    color: black;
+    -webkit-text-stroke: 0.2px azure;
+    color: turquoise;
     text-decoration: none;
     text-transform: capitalize;
 } 
@@ -65,13 +66,24 @@ nav .auth {
 
 .auth .fa-user {
     margin-left: 8px;
-    font-size: 18px;
+    font-size: 28px;
     padding: 3px;
-}
-.auth [p] {
+    border-radius: 50%;
+    border: 1px solid rgb(0, 128, 255);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    color: rgb(0, 128, 255);
+}
+
+.auth p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 nav .auth button {
     position: relative;
@@ -87,14 +99,52 @@ nav .auth button#login {
 nav .auth button#login a {
     color: white;
 }
-nav select {
+.profile select {
     position: relative;
     font-weight: 500;
     cursor: pointer;
-    border: 2.5px solid rgb(0, 128, 255);
+    border: none;
+    background: transparent;
+    color: azure;
+    outline: none;
+    text-align: start;
     border-radius: 5px;
+    font-size: 16px;
 }
-
+.profile select option {
+    border: 1px solid azure;
+    /* background: transparent; */
+    font-size: 16px;
+    color: rgb(0, 128, 255);
+    position: relative;
+}
+.profile {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    width: 150px;
+    padding: 5px 5px 8px 15px;
+    background: rgb(0, 128, 255);
+    border-radius: 1px;
+    border: 1px solid aqua;
+    z-index: 155;
+    transform: translateY(-300px);
+    transition: 0.9s;
+}
+.profile li {
+    width: 100%;
+    font-size: 16px;
+}
+.profile.screen {
+    transform: translateY(20px);
+    transition: 0.9s;
+    
+}
+.profile a {
+    color: azure;
+}
 aside {
     position: absolute;
     width: 100%;
@@ -102,8 +152,10 @@ aside {
     top: -380px;
     background: rgb(0, 128, 255);
     z-index: 100;
+    transition: 1.2s ease;
 }
 aside.bottom{
+    transition: 1.2s ease;
     top: 0;
 }
 aside .navigation {

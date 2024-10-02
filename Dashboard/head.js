@@ -46,6 +46,12 @@ function translate() {
         }
     })
 }
-// translate()
+function profil() {
+    let userIcon = document.querySelector(".fa-user");
+    let profil = document.querySelector(".profile");
 
-// localStorage.clear()
+    userIcon.onclick = () => {
+        profil.classList.toggle("screen");
+    }
+}
+profil()

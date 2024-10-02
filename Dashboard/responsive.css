@@ -1,4 +1,10 @@
 @media screen and (min-width:1024px){
+    .profile {
+        top: 60px;
+        right:10%;
+    }
+
+
     header nav {
        height: 80px;
        justify-content: space-around;
@@ -18,10 +24,8 @@
         padding: 12px 20px;
         font-size: 18px;
     }
-    nav select {
-        padding: 4px 18px;
-        font-size: 16px;
-    }
+    
+    
     nav .auth .fa-navicon {
         display: none;
     }
@@ -97,6 +101,12 @@
     }
 }
 @media screen and (min-width:768px) and (max-width:1024px){
+
+    .profile {
+        top: 60px;
+        right:10%;
+    }
+
     header nav {
         height: 70px;
         justify-content: space-around;
@@ -216,6 +226,10 @@
     .auth .fa-navicon {
         display: block;
     }
+    .profile {
+        top: 60px;
+        right:4%;
+    }
 
     main section {
         grid-template-columns: repeat(1, 1fr);
@@ -307,6 +321,11 @@
     }
     .auth .fa-navicon {
         display: block;
+    }
+
+    .profile {
+        top: 60px;
+        right:4%;
     }
 
     main section {

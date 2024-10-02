@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/Pictures/logo.png" type="image/x-icon">
-    <!-- <link rel="shortcut icon" href="/Pictures/logo.jpg" type="image/x-icon"> -->
     <link rel="stylesheet" href="/Dashboard/style.css">
     <link rel="stylesheet" href="/Dashboard/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Bosh sahifa</title>
 </head>
 <body>
+    <ul class="profile">
+        <li class="name"></li>
+        <li class="cabinet"><a href="/cabinet/cabinet.html">Profil</a></li>
+        <li>
+          <select name="lang" id="lang">
+              <option value="uz">Uzb</option>
+              <option value="ru">Rus</option>
+              <option value="en">Eng</option>
+          </select>
+        </li>
+        <li class="chiqish"><a href="/Authentication/auth.html">Chiqish</a></li>
+      </ul>
     <div class="container">
         <header>
             <nav class="navbar">
@@ -26,16 +37,18 @@
                 </div>
                 <div class="auth">
                     <i class="fa fa-navicon"></i>
-                    <select name="lang" id="lang">
+                    <!-- <select name="lang" id="lang">
                         <option value="uz">Uzb</option>
                         <option value="ru">Rus</option>
                         <option value="en">Eng</option>
-                    </select>
+                    </select> -->
                     <button id="login"><a href="/Authentication/auth.html#formReg" class="tt">Hisobga kirish</a></button>
                     <!-- <button id="sign"><a href="/Authentication/auth.html#formLog">Ro'yxatdan o'tish</a></button> -->
-                    <p p>
-                        <a href="/cabinet/cabinet.html" class="name"></a> &nbsp;
+                    <p>
                         <i class="fa fa-user"></i>
+                        
+                         &nbsp;
+                        
                     </p>
                 </div>
             </nav>
@@ -252,10 +265,10 @@
         function profileName() {
             get(child(dbrf, 'user')).then((snapshot)=>{
                 let nic = localStorage.getItem("nick");
-                if (localStorage.getItem("nick") == snapshot.val()[nic].nickname) {
+                if (localStorage.getItem("nick")) {
                     document.querySelector("#login").style.display = "none"
                     let name = document.querySelector(".name")
-                    name.innerHTML = snapshot.val()[nic].nickname;
+                    name.innerHTML = snapshot.val()[nic].nickname + "<br>";
                 }
             })
         }
