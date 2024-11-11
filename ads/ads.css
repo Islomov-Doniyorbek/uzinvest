@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+}
+
+table.table {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+table a {
+    text-decoration: none;
+    color: #1d2d5b;
+}
+table tbody {
+    position: relative;
+    width: 100%;
+}
+table  tr {
+    padding: 15px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1.3px solid silver;
+    display: grid;
+    grid-template-columns: 10% 35% 15% 20% 20%;
+}
+ td, th {
+    position: relative;
+    padding: 10px;
+    display: flex;
+}
+td a#vazifalar {
+    display: flex; 
+    gap: 8px;
+}

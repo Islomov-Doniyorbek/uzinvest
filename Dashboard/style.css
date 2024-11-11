@@ -140,7 +140,6 @@ nav .auth button#login a {
 .profile.screen {
     transform: translateY(20px);
     transition: 0.9s;
-    
 }
 .profile a {
     color: azure;

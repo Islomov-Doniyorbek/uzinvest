@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ads/ads.css">
+    <title>E'lonlar</title>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h2>Biznes loyihalar</h2>
+        </header>
+        <div class="section">
+            <div class="wrapper">
+                <div class="selects">
+                    <h3>Quyidagilarga ko'ra saralash</h3>
+                    <p>
+                        <label for="type">
+                            Soha bo'yicha  &nbsp;
+                            <select name="type" id="type">
+                                <option value="default">Soha</option>
+                            </select>
+                        </label>
+                        <label for="time">
+                            Muddat bo'yicha  &nbsp;
+                            <select name="time" id="time">
+                                <option value="default">Muddat</option>
+                            </select>
+                        </label>
+                        <label for="cost">
+                            Investitsiya bo'yicha  &nbsp;
+                            <select name="cost" id="cost">
+                                <option value="default">Mablag'</option>
+                            </select>
+                        </label>
+                    </p>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Egasi</th>
+                            <th>Turi</th>
+                            <th>Muddat</th>
+                            <th>Mablag'</th>
+                            <th>Loyiha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Turi">
+                                <p id="fann">Ta'lim</p>
+                            </td>
+                            <td data-label="Muddat">
+                                <p>1 yil</p>
+                            </td>
+                            <td data-label="Mablag'">
+                                <p class="summa">10000$</p>
+                            </td>
+                            <td data-label="Loyiha">
+                                <p class="loyiha"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Turi">
+                                <p id="fann">Ta'lim</p>
+                            </td>
+                            <td data-label="Muddat">
+                                <p>1 yil</p>
+                            </td>
+                            <td data-label="Mablag'">
+                                <p class="summa">10000$</p>
+                            </td>
+                            <td data-label="Loyiha">
+                                <p class="loyiha"></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/ads/ads.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+        import { getDatabase, ref, set, get,child, update, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAGpBTT8n5qJN2DLg0Yij3WddmzUbwVDho",
+          authDomain: "uzinvest-eac73.firebaseapp.com",
+          projectId: "uzinvest-eac73",
+          storageBucket: "uzinvest-eac73.appspot.com",
+          messagingSenderId: "934360038099",
+          appId: "1:934360038099:web:d24940c15e17a09db0b226",
+          measurementId: "G-2CVZMJN98T"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        let db = getDatabase(app)
+        
+        const dbrf = ref(db)
+
+        let tableTbody = document.querySelector(".table tbody");
+        get(child(dbrf, 'ads/')).then((snapshot)=>{
+            for(const key in snapshot.val()){
+                tableTbody.innerHTML += `
+                <tr>
+                    <td data-label="own">
+                        <p>${snapshot.val()[key].owner}</p>
+                    </td>
+                    <td data-label="Turi">
+                        <p id="fann">${snapshot.val()[key].type}</p>
+                    </td>
+                    <td data-label="Muddat">
+                        <p>${snapshot.val()[key].deadline}</p>
+                    </td>
+                    <td data-label="Mablag'">
+                        <p class="summa">${snapshot.val()[key].cost}</p>
+                    </td>
+                    <td data-label="Loyiha">
+                        <p class="loyiha">${snapshot.val()[key].file}</p>
+                    </td>
+                </tr>
+                `
+            }
+        })
+
+       
+    </script>
+</body>
+</html>

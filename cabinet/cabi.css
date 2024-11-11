@@ -96,7 +96,7 @@ h1 {
     display: none;
 } */
 .commentBox {
-    position: absolute;
+    position: fixed;
     width: 100%;
     min-height: 200px;
     z-index: 200;
@@ -106,6 +106,14 @@ h1 {
     padding: 20px 0;
     background: rgba(214, 214, 214, 0.264);
     top: -500px;
+}
+.commentBox .fa-close {
+    font-size: 18px;
+    font-weight: 700;
+    color: azure;
+    width: 100%;
+    text-align: end;
+    cursor: pointer;
 }
 .commentBox .combox {
     position: relative;
@@ -154,7 +162,73 @@ h1 {
     transition: 1.2s;
     top: 0;
 }
+.commentBox.hideTransition{
+    transition: 1.2s;
+    top: -500px;
+}
 .commentBox.hide{
+    transition: 1.2s;
+    top: -500px;
+}
+
+/* E'lon berish qismining stili */
+.adsBox {
+    position: fixed;
+    width: 100%;
+    min-height: 200px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background: rgba(214, 214, 214, 0.264);
+    top: -500px;
+}
+.adsBox .ads_wrap {
+    position: relative;
+    width: 320px;
+    color: azure;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 1.2px solid rgb(0, 98, 255);
+    background: rgb(0, 98, 255);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.ads_wrap i {
+    font-size: 18px;
+    font-weight: 700;
+    color: azure;
+    width: 100%;
+    text-align: end;
+    cursor: pointer;
+}
+.ads_wrap select, .ads_wrap button {
+    border-radius: 4px;
+    padding: 2px 4px;
+    width: 100%;
+    position: relative;
+    font-weight: 700;
+    border: 1px solid azure;
+    outline: none;
+    cursor: pointer;
+}
+.ads_wrap input {
+    cursor: pointer;
+}
+.adsBox.screen{
+    transition: 1.2s;
+    top: 0;
+}
+.adsBox.hideTransition{
+    transition: 1.2s;
+    top: -500px;
+}
+.adsBox.hide{
     transition: 1.2s;
     top: -500px;
 }

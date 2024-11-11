@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Authentication/auth.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Authentication/auth.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <title>Avtorizatsiya</title>
 </head>
 <body>
@@ -40,7 +42,7 @@
                         </p>
                         <p>
                             <i class="fa fa-phone"></i>
-                            <input type="tel" pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="xx-xxx-xx-xx" class="tel" id="checking" required>
+                            <input type="tel" pattern="[0-9]{12}" placeholder="xxxxxxxxxxxx" class="tel" id="checking" required>
                         </p>
                         <p>
                             <i class="fa fa-lock"></i>
@@ -129,66 +131,8 @@
     </div>
 
     <script src="/Authentication/auth.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-        import { getDatabase, ref, set, get,child, update, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+    <script type="module" src="./supa.js"></script>
+    
       
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyAGpBTT8n5qJN2DLg0Yij3WddmzUbwVDho",
-          authDomain: "uzinvest-eac73.firebaseapp.com",
-          projectId: "uzinvest-eac73",
-          storageBucket: "uzinvest-eac73.appspot.com",
-          messagingSenderId: "934360038099",
-          appId: "1:934360038099:web:d24940c15e17a09db0b226",
-          measurementId: "G-2CVZMJN98T"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        let db = getDatabase(app)
-
-        let formReg = document.querySelector("#registr");
-        let formLog = document.querySelector("#kirish");
-        const dbrf = ref(db);
-
-        formReg.addEventListener("click", (e)=>{
-            e.preventDefault();
-            
-            set(ref(db, 'user/' + document.querySelector(".username").value), {
-                username: document.querySelector(".ism").value,
-                nickname: document.querySelector('.username').value,
-                type: document.querySelector('#mijoz').value,
-                phone: document.querySelector('.tel').value,
-                password: document.querySelector('.parol').value,
-                birth: "",
-                address: "",
-                familiya: ""
-            });
-            get(child(dbrf, 'user')).then((snap)=>{
-                localStorage.setItem("nick", snap.val()[document.querySelector(".username").value].nickname);
-            })
-            alert("Muvaffaqiyatli ro'yxatdan o'tdingiz!!!");
-        })
-        formLog.addEventListener("click", (e)=>{
-            e.preventDefault()
-            get(child(dbrf, 'user')).then((snapshot)=>{
-                if(snapshot.val()[document.querySelector(".logUser").value].password == document.querySelector(".logPass").value){
-                    window.location.href = "/index.html";
-                    alert("Success");
-                    let data = localStorage.getItem("nick");
-                    data = snapshot.val()[document.querySelector(".logUser").value].nickname;
-                    localStorage.setItem("nick", data);
-                }
-            })
-        })
-
-        
-      </script>
 </body>
 </html>

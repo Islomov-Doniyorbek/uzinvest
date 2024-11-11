@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Dashboard/style.css">
     <link rel="stylesheet" href="/Dashboard/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="/Dashboard/head.js"></script>
     <title>Bosh sahifa</title>
 </head>
 <body>
@@ -31,17 +32,13 @@
                 </div>
                 <div class="menus">
                     <a href="" class="tt">Xizmatlar</a>
+                    <a href="/ads/ads.html" class="tt">E'lonlar</a>
                     <a href="" class="tt">Haqida</a>
                     <a href="" class="tt">Kontakt</a>
                     <a href="" class="tt">Yordam</a>
                 </div>
                 <div class="auth">
                     <i class="fa fa-navicon"></i>
-                    <!-- <select name="lang" id="lang">
-                        <option value="uz">Uzb</option>
-                        <option value="ru">Rus</option>
-                        <option value="en">Eng</option>
-                    </select> -->
                     <button id="login"><a href="/Authentication/auth.html#formReg" class="tt">Hisobga kirish</a></button>
                     <!-- <button id="sign"><a href="/Authentication/auth.html#formLog">Ro'yxatdan o'tish</a></button> -->
                     <p>
@@ -55,6 +52,7 @@
         <aside>
             <div class="navigation">
                 <a href="">Xizmatlar</a>
+                <a href="">E'lonlar</a>
                 <a href="">Haqida</a>
                 <a href="">Kontakt</a>
                 <a href="">Yordam</a>
@@ -75,19 +73,7 @@
                     <img src="/Pictures/head.jpg" alt="">
                 </div>
             </section>
-            <div class="section">
-                <h2 class="tt">Homiylar</h2>
-                <div class="row">
-                    <div class="sponsors">
-                        <img src="/Pictures/nestle.png" alt="nestle">
-                        <img src="/Pictures/AliExpress.jpg" alt="aliexpress">
-                        <img src="/Pictures/artel.png" alt="artel">
-                        <img src="/Pictures/zurich.png" alt="zurich">
-                        <img src="/Pictures/nmedov.png" alt="nmedov">
-                        <img src="/Pictures/krember.png" alt="krember">
-                    </div>
-                </div>
-            </div>
+            
             <section>
                 <div class="col left">
                     <p id="line"><span>Biznes loyiha uchun </span> </p>
@@ -203,10 +189,13 @@
                     <div class="col">
                         <h3 class="tt">Bo'limlar</h3>
                         <a href="" class="tt">
-                            Bosh sahifa
+                            Xizmatlar
                         </a>
                         <a href="" class="tt">
-                            Xizmatlar
+                            E'lonlar
+                        </a>
+                        <a href="" class="tt">
+                            Haqida
                         </a>
                         <a href="" class="tt">
                             Kontakt
@@ -234,10 +223,9 @@
             </div>
         </footer>
     </div>
-    <script src="/Dashboard/head.js"></script>
     <script type="module">
          // Import the functions you need from the SDKs you need
-         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
         import { getDatabase, ref, set, get,child, update, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
         // TODO: Add SDKs for Firebase products that you want to use

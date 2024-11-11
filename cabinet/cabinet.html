@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/cabinet/cabi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shaxsiy kabinet</title>
 </head>
 <body>
     <div class="container">
         <div class="commentBox">
             <div class="combox">
+                <i class="fa fa-close"></i>
                 <h3 class="title">
                     Platforma haqida izoh qoldiring!
                 </h3>
@@ -19,6 +21,7 @@
                 <p id="thankYou" style="color: lime; font-size: 24px; font-weight: 700; ">E'tiboringiz uchun rahmat!</p>
             </div>
         </div>
+        
         <h1>Xush kelibsiz "<span id="nick"></span>"</h1>
         <div class="wrapper">
             
@@ -52,17 +55,49 @@
                         <span class="address"><br><br></span>
                     </label>
                     <button id="save">Saqlash</button>
-                    <button id="edit">Tahrirlash</button>
+                    <button id="edit" style="display: none;">Tahrirlash</button>
                 </div>
             <div class="col">
                 <div class="deploy_project">
-                    Loyiha bo'yicha e'lon joylashtirish uchun <a href="#">bu yerga o'ting</a>
+                    Loyiha bo'yicha e'lon joylashtirish uchun <button id="ads" style="padding: 5px 3px; border:1px solid blue; border-radius: 6px; cursor: pointer">Bu yerga o'ting</button>
                 </div>
                 <div class="top_ads">
                     <p>E'loningizni Top'ga chiqarmoqchimisiz?! <br>Unda quyidagi link orqali to'lovni amalga oshiring va sizning e'loningiz yetakchi o'rinlardan joy oladi</p><a href="#">To'lov</a>
                 </div>
                 <div class="chat">Hamkorlar bilan suhbatlaringiz <button id="chat">Chat</button></div>
                 <div class="comment">Kompaniya haqida izoh qoldirish <button id="commentBtn">Izoh</button></div>
+            </div>
+        </div>
+
+        <div class="adsBox">
+            <div class="ads_wrap">
+                <i class="fa fa-close"></i>
+                <label for="#tur"> Soha <br>
+                    <select name="" id="tur">
+                        <option value="Ta'lim">Ta'lim</option>
+                        <option value="Biznes">Biznes</option>
+                        <option value="Dehqonchilik">Dehqonchilik</option>
+                        <option value="Ekologiya">Ekologiya</option>
+                    </select>
+                </label>
+                <label for="#muddat">Muddat <br>
+                    <select name="" id="muddat">
+                        <option value="6 oy">6 oy</option>
+                        <option value="1 yil">1 yil</option>
+                        <option value="1-3 yil">1-3 yil</option>
+                        <option value="5 yil">5 yil</option>
+                    </select>
+                </label>
+                <label for="#invest"> Investitsiya <br>
+                    <select name="" id="invest">
+                        <option value="10000$">10000$</option>
+                        <option value="20000$">20000$</option>
+                        <option value="50000$">50000$</option>
+                        <option value="100000$">100000$</option>
+                    </select>
+                </label>
+                <input type="file" id="file">
+                <button id="ads_save">E'lon berish</button>
             </div>
         </div>
     <script src="/cabinet/cabi.js"></script>
@@ -144,25 +179,28 @@
                 ismSpan.innerHTML = snapshot.val()[nick].username;
             }
             
+            editBTN.style.display = "none";
             saveBtn.onclick = () => {
                     snapshot.val()[nick].familiya = fam.value;
-                    if(address.value == "" || birth.value == "" || kasb.value == ""){
+                    if(address.value != "" || birth.value != "" || kasb.value != ""){
                         update(ref(db, "user/" + nick), {
                             familiya: fam.value,
                             birth: birth.value,
                             address: address.value,
                         });
                         window.location.href = '/cabinet/cabinet.html';
-                        
+                        editBTN.style.display = "block";
+                        saveBtn.style.display = "none";
+                    }else{
+                        alert("Ma'lumotlarni kiritmadingiz!")
                     }
-                    editBTN.style.display = "block";
                 }
-           
-            if(saveBtn.style.display != "none"){
-                editBTN.style.display = "block";
-            }else{
-                editBTN.style.display = "none";
-            }
+            
+            // if(saveBtn.style.display != "none"){
+            //     editBTN.style.display = "block";
+            // }else{
+            //     editBTN.style.display = "none";
+            // }
             if(snapshot.val()[nick].familiya){
                 fam.style.display = "none";
                 famSpan.innerHTML = snapshot.val()[nick].familiya;
@@ -189,6 +227,7 @@
             }
             if(snapshot.val()[nick].address && snapshot.val()[nick].birth && snapshot.val()[nick].familiya) {
                 saveBtn.style.display = "none";
+                editBTN.style.display = "block";
             }
 
             
@@ -201,11 +240,17 @@
         let pSuccess = document.querySelector("#thankYou");
         let textarea = document.querySelector("textarea");
         let commentbox = document.querySelector(".commentBox");
+        let commentboxClose = document.querySelector(".commentBox .fa-close");
 
+        commentBtn.onclick = () =>{
+            commentbox.classList.toggle("screen")
+            commentbox.classList.remove("hideTransition")
+        }
+        commentboxClose.onclick = () =>{
+            commentbox.classList.toggle("hideTransition")
+            commentbox.classList.remove("screen")
+        }
         get(child(dbrf, 'user')).then((snapshot)=>{
-            commentBtn.onclick = () =>{
-                commentbox.classList.toggle("screen")
-            }
             sendCommentBtn.onclick = () => {
                     const times = new Date();
                     let vaqt = times.getDate();
@@ -237,6 +282,41 @@
             }
 
         })
+        
+
+        // E'lon yuklash
+
+
+        let selectCost = document.querySelector("#invest"),
+            selectDeadline = document.querySelector("#muddat"),
+            selectType = document.querySelector("#tur"),
+            inputFile = document.querySelector("#file"),
+            adsBtn = document.querySelector("#ads"),
+            adsBox = document.querySelector(".adsBox"),
+            adsBoxClose = document.querySelector(".adsBox .fa-close"),
+            sendBtn = document.querySelector("#ads_save")
+        adsBtn.onclick = () =>{
+            adsBox.classList.toggle("screen")
+            adsBox.classList.remove("hideTransition")
+        }
+        adsBoxClose.onclick = () =>{
+            adsBox.classList.toggle("hideTransition")
+            adsBox.classList.remove("screen")
+        }
+         get(child(dbrf, 'ads')).then((snapshot)=>{
+            sendBtn.addEventListener("click", ()=>{
+                set(ref(db, 'ads/' + nick), {
+                    cost: selectCost.value,
+                    deadline: selectDeadline.value,
+                    file: inputFile.value,
+                    type: selectType.value,
+                    owner: nick,
+                });
+                alert("success")
+                })
+
+            })
+            
 
 
     </script>

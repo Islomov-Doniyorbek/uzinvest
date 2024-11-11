@@ -11,13 +11,13 @@ let logHave = document.querySelector("form .logHave #link"),
     resend = document.querySelector("form #resend"),
     registr = document.querySelector("form #registr");
 
-registr.onclick = () => {
-    input.forEach(e => {
-        if (e.value != "") {
-            window.location.href = "/index.html"
-        }
-    })
-}
+// registr.onclick = () => {
+//     input.forEach(e => {
+//         if (e.value != "") {
+//             window.location.href = "/index.html"
+//         }
+//     })
+// }
 // localStorage.clear()
 logHave.onclick = (e)=> {
     e.preventDefault();
@@ -90,17 +90,17 @@ sendNewPassword.onclick = (e)=> {
     })
 }
 
-input.forEach(e => {
-    e.addEventListener('input', () => {
-        if (e.type != "checkbox") {
-            if (e.validity.valid) {
-                e.parentElement.style.boxShadow = '0 0 8px 3px green'; // Valid holat uchun yashil rang
-              } else {
-                  e.parentElement.style.boxShadow = '0 0 8px 3px red'; // Valid holat uchun yashil rang
-              }
-        }
-      });
-})
+// input.forEach(e => {
+//     e.addEventListener('input', () => {
+//         if (e.type != "checkbox") {
+//             if (e.validity.valid) {
+//                 e.parentElement.style.boxShadow = '0 0 8px 3px green'; // Valid holat uchun yashil rang
+//               } else {
+//                   e.parentElement.style.boxShadow = '0 0 8px 3px red'; // Valid holat uchun yashil rang
+//               }
+//         }
+//       });
+// })
 
 if (localStorage.getItem("nick")) {
     let sorov = confirm("Eski akkauntingiz bilan kirasizmi?!");
@@ -108,3 +108,9 @@ if (localStorage.getItem("nick")) {
         localStorage.clear();
     }
 }
+
+
+
+
+
+
