@@ -91,12 +91,12 @@ nav .auth button {
     cursor: pointer;
     border-radius: 6px;
 }
-nav .auth button#login {
+nav .auth button#loginButton {
     background: rgb(0,128,255);
     outline: none;
     border: none;
 }
-nav .auth button#login a {
+nav .auth button#loginButton a {
     color: white;
 }
 .profile select {
@@ -145,34 +145,35 @@ nav .auth button#login a {
     color: azure;
 }
 aside {
-    position: absolute;
-    width: 100%;
-    height: 380px;
-    top: -380px;
+    position: fixed;
+    height: 100vh;
+    width: 380px;
+    left: -380px;
+    top: 0;
     background: rgb(0, 128, 255);
-    z-index: 100;
+    z-index: 2500;
     transition: 1.2s ease;
 }
-aside.bottom{
+aside.right{
     transition: 1.2s ease;
-    top: 0;
+    left: 0;
 }
 aside .navigation {
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
     height: 100%;
+    padding-top: 45px;
 }
-aside .navigation a {
-    width: 40%;
-    padding: 8px 13px;
+aside .navigation a
+ {
+    width: 100%;
+    position: relative;
+    padding: 8px 30px;
     font-size: 20px;
     color: rgb(255, 255, 255);
     border-bottom: 1.3px solid rgb(152, 204, 255);
-    text-align: center;
+    
     text-decoration: none;
     cursor: pointer;
 }

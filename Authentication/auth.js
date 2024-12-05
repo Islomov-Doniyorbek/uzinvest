@@ -9,7 +9,8 @@ let logHave = document.querySelector("form .logHave #link"),
     sendCode = document.querySelector("form #sendCode"),
     sendNewPassword = document.querySelector("form #sendNewPassword"),
     resend = document.querySelector("form #resend"),
-    registr = document.querySelector("form #registr");
+    registr = document.querySelector("form #registr"),
+    checking = document.querySelectorAll("#checking");
 
 // registr.onclick = () => {
 //     input.forEach(e => {
@@ -90,18 +91,6 @@ sendNewPassword.onclick = (e)=> {
     })
 }
 
-// input.forEach(e => {
-//     e.addEventListener('input', () => {
-//         if (e.type != "checkbox") {
-//             if (e.validity.valid) {
-//                 e.parentElement.style.boxShadow = '0 0 8px 3px green'; // Valid holat uchun yashil rang
-//               } else {
-//                   e.parentElement.style.boxShadow = '0 0 8px 3px red'; // Valid holat uchun yashil rang
-//               }
-//         }
-//       });
-// })
-
 if (localStorage.getItem("nick")) {
     let sorov = confirm("Eski akkauntingiz bilan kirasizmi?!");
     if (sorov == false) {
@@ -110,7 +99,13 @@ if (localStorage.getItem("nick")) {
 }
 
 
+function checkingValid() {
+    checking.forEach(e => {
+        if (e.invalid === true) {
+            e.style.border = "1.2px solid green"
+        }
+    })
+}
 
-
-
+checkingValid()
 

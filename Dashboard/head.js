@@ -1,15 +1,32 @@
 
+// function checkingUser() {
+//     let userIcon = document.querySelector(".fa-user");
+//     if (localStorage.getItem("nick")) {
+//         document.querySelector("#login").style.display = "none";
+//     } else {
+//         userIcon.style.display = "none"
+//     }
+//     console.log(userIcon);
+// }
+// checkingUser()
+
+
 // localStorage.clear()
 function aside() {
     let navicon = document.querySelector(".fa-navicon");
     let aside = document.querySelector("aside");
     let yopish = document.querySelector("#exit");
+    let body = document.querySelector("body");
 
     navicon.onclick = () => {
-        aside.classList.toggle("bottom")
+        aside.classList.toggle("right")
     }
-    yopish.onclick = () => {
-        aside.classList.remove("bottom")
+    yopish.onclick = (e) => {
+        e.preventDefault()
+        aside.classList.remove("right")
+    }
+    if (window.innerWidth > 768) {
+        aside.classList.remove("right")        
     }
 }
 aside()
@@ -55,13 +72,3 @@ function profil() {
     }
 }
 profil()
-function checkingUser() {
-    let userIcon = document.querySelector(".fa-user");
-    if (localStorage.getItem("nick")) {
-        document.querySelector("#login").style.display = "none";
-    } else {
-        userIcon.style.display = "none"
-    }
-    console.log(userIcon);
-}
-checkingUser()

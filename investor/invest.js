@@ -53,7 +53,31 @@ dovom.onclick = () => {
         let selectss = document.querySelectorAll(".selects select");
         selectss.forEach(e => {
             if (e.value == "default") {
-                e.style.borderBottom = "2px solid aqua"
+                e.style.borderBottom = "2px solid red";
+            } else {
+                e.style.borderBottom = "2px solid lime";
+                setTimeout(() => {
+                    wrapper.innerHTML = `
+                    <div class="searching">
+                    <div class="score">
+                    <h2>Qidiruv natijalar</h2>
+                    <div class="natijalar">
+                        <ol class="scores">
+                            <li class="item">
+                                <span class="type">Ta'lim</span>
+                                <span class="name">Online Course</span>
+                                <span class="invest">2000$</span>
+                                <span class="time">1 oygacha</span>
+                            </li>
+                        </ol>
+                        <h2 class="noFound none">
+                            Ma'lumot topilmadi!
+                        </h2>
+                    </div>
+                </div>
+            </div>
+                    `
+                }, 1000);
             }
         })
         console.log(123);

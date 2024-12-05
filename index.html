@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/Dashboard/style.css">
     <link rel="stylesheet" href="/Dashboard/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="/Dashboard/head.js"></script>
+    <script defer type="module" src="/Dashboard/head.js"></script>
+    <!-- <script defer type="module" src="/database/supa.js"></script> -->
     <title>Bosh sahifa</title>
 </head>
 <body>
@@ -39,12 +40,10 @@
                 </div>
                 <div class="auth">
                     <i class="fa fa-navicon"></i>
-                    <button id="login"><a href="/Authentication/auth.html#formReg" class="tt">Hisobga kirish</a></button>
+                    <button id="loginButton"><a href="/Authentication/auth.html#formReg" class="tt">Hisobga kirish</a></button>
                     <!-- <button id="sign"><a href="/Authentication/auth.html#formLog">Ro'yxatdan o'tish</a></button> -->
                     <p>
                         <i class="fa fa-user"></i>
-                        
-                        
                     </p>
                 </div>
             </nav>
@@ -223,7 +222,7 @@
             </div>
         </footer>
     </div>
-    <script type="module">
+    <!-- <script type="module">
          // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
@@ -282,6 +281,6 @@
 
         
 
-    </script>
+    </script> -->
 </body>
 </html>
