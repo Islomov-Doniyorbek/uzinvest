@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./service.css">
+    <title>Xizmatlar</title>
+</head>
+<body>
+    <div class="container">
+        <div class="back">
+            <a href="/index.html"><i class="fa fa-arrow-left"></i> Qaytish</a>
+        </div>
+        <div class="resume-container">
+            <div class="resume-box">
+                <ul class="resume edu">
+                    <li class="resume-tab-list-single-item">
+                        <div class="content">
+                            <div class="left">
+                                <span id="oneSpan">Investorlarni izlash <span id="orient"><</span></span>
+                            </div>
+                            <div class="right">
+                                <h3>Investorlarni topishda yordam beramiz!</h3>
+                                <span>Qanday qilib?!</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indus dard dummy text ever since the 1500 when an uniknown prnter took galley of type and scrambled make specimen book has not only five centuries the into electronic.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="resume-tab-list-single-item">
+                        <div class="content">
+                            <div class="left">
+                                <span id="oneSpan">Faol tadbirkorlar bilan 'meet up'<span id="orient"><</span></span>
+                            </div>
+                            <div class="right">
+                                <h3>Meet Up</h3>
+                                <span>Investor & Busines(wo)men</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indus dard dummy text ever since the 1500 when an uniknown prnter took galley of type and scrambled make specimen book has not only five centuries the into electronic.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="resume-tab-list-single-item">
+                        <div class="content">
+                            <div class="left">
+                                <span id="oneSpan">Start Up'larni moliyalashtirish<span id="orient"><</span></span>
+                            </div>
+                            <div class="right">
+                                <h3>Start up'larni rivojlantirish</h3>
+                                <span>Uz Invest bunda yordam beradi!</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indus dard dummy text ever since the 1500 when an uniknown prnter took galley of type and scrambled make specimen book has not only five centuries the into electronic.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="resume-tab-list-single-item">
+                        <div class="content">
+                            <div class="left">
+                                <span id="oneSpan">E'lonlar joylash<span id="orient"><</span></span>
+                            </div>
+                            <div class="right">
+                                <h3>Reklama</h3>
+                                <span>E'lonlar joylash orqali ishingizni yanada osonlashtiring!</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indus dard dummy text ever since the 1500 when an uniknown prnter took galley of type and scrambled make specimen book has not only five centuries the into electronic.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function navigationEduExp() {
+        const leftItems = document.querySelectorAll(".content .left");
+        const rightItems = document.querySelectorAll(".content .right");
+        leftItems.forEach((i, o) => i.onclick = function () {
+            rightItems[o].classList.toggle("opening")
+            
+        })
+}
+navigationEduExp()
+    </script>
+</body>
+</html>
